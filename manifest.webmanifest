@@ -8,9 +8,10 @@
   "theme_color": "#244c3e",
   "icons": [
     {
-      "src": "/assets/roberto-moraga-logo.png",
-      "sizes": "2054x766",
-      "type": "image/png"
+      "src": "/assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

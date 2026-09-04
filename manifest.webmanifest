@@ -1,0 +1,16 @@
+{
+  "name": "Roberto Moraga",
+  "short_name": "Roberto Moraga",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f6f0",
+  "theme_color": "#244c3e",
+  "icons": [
+    {
+      "src": "/assets/roberto-moraga-logo.png",
+      "sizes": "2054x766",
+      "type": "image/png"
+    }
+  ]
+}

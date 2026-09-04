@@ -1,0 +1,656 @@
+.investor-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(247, 246, 240, 0.98) 0%, rgba(236, 242, 238, 0.98) 48%, #fbfbf8 100%);
+}
+
+.investor-header {
+  grid-template-columns: auto 1fr auto;
+}
+
+.investor-header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: max-content;
+}
+
+.investor-whatsapp-compact,
+.investor-logout {
+  min-height: 40px;
+  padding-inline: 14px;
+  font-size: 0.86rem;
+}
+
+.investor-main {
+  min-height: calc(100vh - 72px);
+}
+
+.investor-gate {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.7fr);
+  gap: clamp(28px, 6vw, 92px);
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding: clamp(44px, 7vw, 86px) clamp(18px, 5vw, 72px);
+}
+
+.investor-gate-copy {
+  max-width: 760px;
+}
+
+.investor-gate h1,
+.investor-welcome h1 {
+  max-width: 10ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(3.2rem, 8vw, 7.6rem);
+  line-height: 0.88;
+  text-wrap: balance;
+}
+
+.investor-gate-copy > p:not(.eyebrow),
+.investor-welcome-copy > p:not(.eyebrow) {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.7vw, 1.22rem);
+  line-height: 1.55;
+}
+
+.investor-gate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.investor-gate-actions .button,
+.investor-gate-actions .whatsapp-button {
+  flex: 0 1 auto;
+  min-width: min(100%, 210px);
+}
+
+.investor-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 760px;
+  margin-top: 34px;
+}
+
+.investor-proof-grid div,
+.investor-login-card,
+.identity-panel,
+.portfolio-switcher,
+.kpi-card,
+.chart-panel,
+.contract-panel,
+.payments-panel,
+.investor-support,
+.contract-document {
+  border: 1px solid rgba(217, 224, 221, 0.92);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 42px rgba(23, 32, 29, 0.08);
+}
+
+.investor-proof-grid div {
+  display: grid;
+  gap: 6px;
+  min-height: 108px;
+  padding: 18px;
+}
+
+.investor-proof-grid strong {
+  color: var(--green);
+  font-size: 1.05rem;
+}
+
+.investor-proof-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.investor-login-card {
+  display: grid;
+  gap: 16px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.investor-login-card h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.98;
+}
+
+.investor-login-card .button {
+  width: 100%;
+}
+
+.investor-login-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.investor-dashboard[hidden],
+.investor-gate[hidden],
+[data-dashboard-nav][hidden],
+.investor-logout[hidden] {
+  display: none;
+}
+
+.investor-dashboard {
+  display: grid;
+  gap: clamp(18px, 3vw, 28px);
+  padding: clamp(28px, 5vw, 58px) clamp(18px, 5vw, 72px) clamp(50px, 7vw, 86px);
+}
+
+.investor-welcome {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.72fr);
+  gap: clamp(18px, 4vw, 42px);
+  align-items: end;
+}
+
+.identity-panel {
+  padding: 22px;
+}
+
+.identity-panel dl,
+.contract-facts,
+.contract-document-facts {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.identity-panel div,
+.contract-facts div,
+.contract-document-facts div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.identity-panel dt,
+.contract-facts dt,
+.contract-document-facts dt {
+  color: var(--clay);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.identity-panel dd,
+.contract-facts dd,
+.contract-document-facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 760;
+  line-height: 1.36;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+}
+
+.portfolio-switcher h2,
+.chart-heading h2,
+.panel-heading h2,
+.investor-support h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  line-height: 1.06;
+}
+
+.portfolio-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.portfolio-tab {
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(217, 224, 221, 0.92);
+  border-radius: 8px;
+  color: var(--green);
+  background: #fbfbf8;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 850;
+  cursor: pointer;
+  transition:
+    transform var(--soft-transition),
+    border-color var(--soft-transition),
+    background var(--soft-transition),
+    color var(--soft-transition);
+}
+
+.portfolio-tab:hover,
+.portfolio-tab[aria-pressed="true"] {
+  border-color: rgba(216, 166, 64, 0.76);
+  color: var(--white);
+  background: var(--green);
+}
+
+.portfolio-tab:hover {
+  transform: translateY(-1px);
+}
+
+.investor-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.kpi-card {
+  display: grid;
+  gap: 8px;
+  min-height: 142px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.kpi-label {
+  color: var(--clay);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.kpi-value {
+  color: var(--ink);
+  font-size: clamp(1.55rem, 3vw, 2.55rem);
+  font-weight: 880;
+  line-height: 0.98;
+}
+
+.kpi-sub {
+  align-self: end;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.42;
+}
+
+.investor-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.chart-panel {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.chart-heading,
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.chart-heading > span {
+  flex: 0 0 auto;
+  color: var(--green);
+  font-size: 1.05rem;
+  font-weight: 850;
+}
+
+.growth-chart,
+.payment-chart {
+  display: block;
+  width: 100%;
+  min-height: 260px;
+  color: var(--green);
+}
+
+.chart-axis {
+  stroke: rgba(23, 32, 29, 0.18);
+  stroke-width: 1;
+}
+
+.chart-grid {
+  stroke: rgba(23, 32, 29, 0.08);
+  stroke-width: 1;
+}
+
+.capital-reference {
+  stroke: rgba(184, 110, 58, 0.94);
+  stroke-dasharray: 6 5;
+  stroke-width: 1.6;
+}
+
+.capital-reference-label {
+  fill: var(--clay);
+  font-size: 12px;
+  font-weight: 850;
+  paint-order: stroke;
+  stroke: rgba(251, 251, 248, 0.92);
+  stroke-width: 3px;
+}
+
+.growth-area {
+  fill: rgba(216, 166, 64, 0.22);
+}
+
+.growth-line {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.growth-dot {
+  fill: var(--white);
+  stroke: var(--green);
+  stroke-width: 3;
+}
+
+.principal-bar {
+  fill: var(--green);
+}
+
+.bar-principal {
+  fill: #3e7661;
+}
+
+.bar-interest {
+  fill: #d8a640;
+}
+
+.chart-label {
+  fill: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.chart-value-label {
+  fill: var(--ink);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.investor-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.contract-panel,
+.payments-panel {
+  padding: 20px;
+}
+
+.contract-panel {
+  position: sticky;
+  top: 92px;
+  display: grid;
+  gap: 20px;
+}
+
+.contract-panel .button {
+  flex: 0 0 auto;
+}
+
+.contract-panel .button[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.contract-note {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.contract-facts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.payments-table-shell {
+  width: 100%;
+  margin-top: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.payments-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.payments-table th,
+.payments-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid rgba(217, 224, 221, 0.86);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.payments-table th {
+  color: var(--clay);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.payments-table td {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 720;
+}
+
+.payment-status {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 999px;
+  color: var(--green);
+  background: rgba(62, 118, 97, 0.12);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.payment-status.pending {
+  color: #8a5d0b;
+  background: rgba(216, 166, 64, 0.2);
+}
+
+.investor-support {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px;
+  color: var(--white);
+  background: var(--green);
+}
+
+.investor-support .eyebrow,
+.investor-support h2 {
+  color: var(--white);
+}
+
+.investor-support .whatsapp-button {
+  flex: 0 0 auto;
+  min-width: 220px;
+  background: #ffffff;
+}
+
+.contract-demo-main {
+  padding: clamp(34px, 6vw, 72px) clamp(18px, 5vw, 72px);
+}
+
+.contract-document {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 54px);
+}
+
+.contract-document h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  line-height: 0.96;
+}
+
+.contract-document > p,
+.contract-document-section p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.contract-document-facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid rgba(217, 224, 221, 0.92);
+  border-radius: 8px;
+  background: #fbfbf8;
+}
+
+.contract-document-section {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(217, 224, 221, 0.92);
+}
+
+.contract-document-section h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 1120px) {
+  .investor-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .investor-detail-grid,
+  .investor-charts,
+  .investor-welcome,
+  .investor-gate {
+    grid-template-columns: 1fr;
+  }
+
+  .contract-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .investor-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .investor-header-actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .investor-whatsapp-compact {
+    display: none;
+  }
+
+  .investor-logout {
+    min-height: 34px;
+    padding-inline: 11px;
+    font-size: 0.78rem;
+  }
+
+  .investor-main {
+    min-height: calc(100vh - 86px);
+  }
+
+  .investor-gate,
+  .investor-dashboard,
+  .contract-demo-main {
+    padding-inline: 14px;
+  }
+
+  .investor-gate {
+    min-height: calc(100vh - 86px);
+    padding-top: 54px;
+  }
+
+  .investor-gate h1,
+  .investor-welcome h1 {
+    max-width: 12ch;
+    font-size: clamp(2.6rem, 15vw, 4.6rem);
+  }
+
+  .investor-proof-grid,
+  .contract-facts,
+  .contract-document-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-switcher,
+  .chart-heading,
+  .panel-heading,
+  .investor-support {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .portfolio-tabs {
+    justify-content: flex-start;
+  }
+
+  .portfolio-tab,
+  .contract-panel .button,
+  .investor-support .whatsapp-button {
+    width: 100%;
+  }
+
+  .investor-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .growth-chart,
+  .payment-chart {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .investor-gate-actions,
+  .investor-gate-actions .button,
+  .investor-gate-actions .whatsapp-button {
+    width: 100%;
+  }
+
+  .investor-login-card,
+  .identity-panel,
+  .portfolio-switcher,
+  .kpi-card,
+  .chart-panel,
+  .contract-panel,
+  .payments-panel,
+  .investor-support,
+  .contract-document {
+    padding: 16px;
+  }
+}

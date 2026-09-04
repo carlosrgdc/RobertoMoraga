@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "defaultStatus": "inactiva",
+  "statusStyles": {
+    "activa": {
+      "label": "Activa",
+      "fill": "#36cf65",
+      "stroke": "rgba(23, 32, 29, 0.68)"
+    },
+    "en_proceso": {
+      "label": "En proceso",
+      "fill": "#5f8f63",
+      "stroke": "rgba(23, 32, 29, 0.68)"
+    },
+    "inactiva": {
+      "label": "Inactiva",
+      "fill": "#d9e0dd",
+      "stroke": "rgba(23, 32, 29, 0.44)"
+    }
+  },
+  "statusByName": {
+    "Albacete": "inactiva",
+    "Alacant/Alicante": "en_proceso",
+    "Almería": "inactiva",
+    "Ávila": "inactiva",
+    "Badajoz": "inactiva",
+    "Barcelona": "inactiva",
+    "Burgos": "inactiva",
+    "Cáceres": "inactiva",
+    "Cádiz": "inactiva",
+    "Castelló/Castellón": "inactiva",
+    "Ciudad Real": "inactiva",
+    "Córdoba": "inactiva",
+    "A Coruña": "inactiva",
+    "Cuenca": "inactiva",
+    "Girona": "inactiva",
+    "Granada": "inactiva",
+    "Guadalajara": "inactiva",
+    "Gipuzkoa": "inactiva",
+    "Huelva": "inactiva",
+    "Huesca": "inactiva",
+    "Jaén": "inactiva",
+    "León": "inactiva",
+    "Lleida": "inactiva",
+    "La Rioja": "inactiva",
+    "Lugo": "inactiva",
+    "Madrid": "activa",
+    "Málaga": "inactiva",
+    "Murcia": "activa",
+    "Navarra": "inactiva",
+    "Ourense": "inactiva",
+    "Asturias": "activa",
+    "Palencia": "inactiva",
+    "Pontevedra": "inactiva",
+    "Salamanca": "inactiva",
+    "Cantabria": "inactiva",
+    "Segovia": "inactiva",
+    "Sevilla": "inactiva",
+    "Soria": "inactiva",
+    "Tarragona": "inactiva",
+    "Teruel": "inactiva",
+    "Toledo": "inactiva",
+    "València/Valencia": "en_proceso",
+    "Valladolid": "inactiva",
+    "Bizkaia": "inactiva",
+    "Zamora": "inactiva",
+    "Zaragoza": "inactiva",
+    "Araba/Álava": "inactiva"
+  }
+}

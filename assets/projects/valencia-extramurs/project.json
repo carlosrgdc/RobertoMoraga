@@ -1,0 +1,136 @@
+{
+  "slug": "valencia-extramurs",
+  "order": 3,
+  "section": {
+    "es": "Vendemos",
+    "en": "Sell"
+  },
+  "title": {
+    "es": "Valencia Extramurs",
+    "en": "Valencia Extramurs"
+  },
+  "city": {
+    "es": "Valencia",
+    "en": "Valencia"
+  },
+  "summary": {
+    "es": "Vivienda de tres habitaciones pensada para alquiler por estancias, con puesta a punto funcional, mobiliario resistente y acabados estándar.",
+    "en": "Three-bedroom home designed for room-by-room rental, with functional refurbishment, durable furniture and standard finishes."
+  },
+  "metrics": {
+    "cost": {
+      "es": "68.500 €",
+      "en": "68,500 €"
+    },
+    "return": {
+      "es": "10,6%",
+      "en": "10.6%"
+    },
+    "timeline": {
+      "es": "7 semanas",
+      "en": "7 weeks"
+    }
+  },
+  "carousel": {
+    "model": {
+      "es": "Room-by-room",
+      "en": "Room-by-room"
+    },
+    "reform": {
+      "es": "Tres dormitorios con mobiliario funcional, cocina resistente, baño renovado y acabados estándar para uso intensivo.",
+      "en": "Three bedrooms with functional furniture, hard-wearing kitchen, updated bathroom and standard finishes for heavy use."
+    },
+    "economics": {
+      "es": "Coste total estimado: 68.500 euros. Rentabilidad objetivo: 10,6%. Puesta a punto: 7 semanas.",
+      "en": "Estimated total cost: 68,500 euros. Target return: 10.6%. Setup time: 7 weeks."
+    },
+    "stats": {
+      "es": ["3 hab.", "10,6% objetivo", "7 semanas"],
+      "en": ["3 rooms", "10.6% target", "7 weeks"]
+    }
+  },
+  "images": [
+    {
+      "file": "cover.png",
+      "alt": {
+        "es": "Salón comedor modesto con luz natural y mobiliario funcional",
+        "en": "Modest living-dining room with natural light and functional furniture"
+      },
+      "caption": {
+        "es": "Zona común práctica y sin lujo.",
+        "en": "Practical shared area without luxury."
+      }
+    },
+    {
+      "file": "interior-1.png",
+      "alt": {
+        "es": "Cocina sencilla con acabados estándar",
+        "en": "Simple kitchen with standard finishes"
+      },
+      "caption": {
+        "es": "Cocina funcional para uso diario.",
+        "en": "Functional kitchen for daily use."
+      }
+    },
+    {
+      "file": "interior-2.png",
+      "alt": {
+        "es": "Dormitorio sencillo preparado para alquiler",
+        "en": "Simple bedroom prepared for rental"
+      },
+      "caption": {
+        "es": "Dormitorio funcional y neutro.",
+        "en": "Functional and neutral bedroom."
+      }
+    },
+    {
+      "file": "interior-3.png",
+      "alt": {
+        "es": "Baño renovado con materiales estándar",
+        "en": "Refreshed bathroom with standard materials"
+      },
+      "caption": {
+        "es": "Baño correcto y resistente al uso.",
+        "en": "Correct bathroom built for regular use."
+      }
+    }
+  ],
+  "scope": {
+    "es": [
+      "Tres dormitorios con mobiliario completo y almacenamiento útil.",
+      "Zona común compacta para maximizar superficie alquilable.",
+      "Cocina y baño revisados con materiales resistentes.",
+      "Preparación documental y comercial para ocupación progresiva."
+    ],
+    "en": [
+      "Three bedrooms with complete furniture and useful storage.",
+      "Compact shared area to maximize rentable surface.",
+      "Kitchen and bathroom reviewed with resistant materials.",
+      "Documentation and marketing preparation for progressive occupancy."
+    ]
+  },
+  "economics": {
+    "es": [
+      ["Señal/arras orientativa", "3.600 € dentro del precio"],
+      ["Precio de adquisición", "54.800 €"],
+      ["ITP, notaría y registro", "5.650 €"],
+      ["Agencia y cierre", "1.050 €"],
+      ["Puesta a punto y mobiliario", "7.000 €"],
+      ["Coste total estimado", "68.500 €"],
+      ["Rentabilidad objetivo", "10,6%"]
+    ],
+    "en": [
+      ["Indicative deposit", "3,600 € within purchase price"],
+      ["Purchase price", "54,800 €"],
+      ["Transfer tax, notary and registry", "5,650 €"],
+      ["Agency and closing", "1,050 €"],
+      ["Renovation and furniture", "7,000 €"],
+      ["Estimated total cost", "68,500 €"],
+      ["Target return", "10.6%"]
+    ]
+  },
+  "cta": {
+    "es": "Revisamos activos con puesta a punto funcional, acabados estándar y rotación controlada.",
+    "en": "We review assets with functional refurbishment, standard finishes and controlled turnover."
+  }
+}

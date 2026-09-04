@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invierte | Roberto Moraga</title>
+    <meta
+      name="description"
+      content="Portal de inversión con pagos mensuales durante 24 meses."
+    />
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css?v=callback-api-v8" />
+    <link rel="stylesheet" href="./inversores.css?v=investor-portal-v1" />
+    <script src="../analytics.js?v=20260814a" defer></script>
+    <script src="./inversores.js?v=investor-portal-v2" defer></script>
+  </head>
+  <body class="investor-page" data-investor-page>
+    <header class="site-header investor-header" aria-label="Cabecera del portal">
+      <a class="brand" href="../index.html#inicio" aria-label="Volver a Roberto Moraga">
+        <span class="brand-mark" aria-hidden="true">
+          RM
+        </span>
+        <span>Roberto Moraga</span>
+      </a>
+      <nav class="top-nav investor-top-nav" aria-label="Navegación principal">
+        <a href="../index.html#inicio">Inicio</a>
+        <a href="../index.html#gestionamos-tu-vivienda">Gestionamos tu vivienda</a>
+        <a href="../inversores/">Invierte</a>
+        <a href="../sobre-roberto-moraga/">Nuestra historia</a>
+      </nav>
+      <div class="investor-header-actions">
+        <a
+          class="button button-light investor-whatsapp-compact"
+          href="https://wa.me/34635335513?text=Hola,%20quiero%20empezar%20como%20inversor%20en%20Roberto%20Moraga."
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+        <button class="button investor-logout" type="button" data-logout hidden>Salir</button>
+      </div>
+    </header>
+
+    <main class="investor-main">
+      <section class="investor-gate" id="login" data-login-view>
+        <div class="investor-gate-copy">
+          <p class="eyebrow">Invierte</p>
+          <h1>Invierte</h1>
+          <p>24 meses. Principal e intereses cada mes.</p>
+          <div class="investor-gate-actions">
+            <a class="button" href="#login-card">Entrar al portal</a>
+            <a
+              class="whatsapp-button" data-analytics-id="whatsapp_cta"
+              href="https://wa.me/34635335513?text=Hola,%20quiero%20empezar%20como%20inversor%20en%20Roberto%20Moraga."
+              target="_blank"
+              rel="noopener"
+            >
+              <img class="whatsapp-icon" src="../assets/whatsapp.svg" alt="" aria-hidden="true" />
+              Empezar por WhatsApp
+            </a>
+          </div>
+          <div class="investor-proof-grid" aria-label="Resumen del portal">
+            <div>
+              <strong>24 meses</strong>
+              <span>Ciclo total</span>
+            </div>
+            <div>
+              <strong>Cuotas</strong>
+              <span>Principal e intereses cada mes</span>
+            </div>
+            <div>
+              <strong>Acceso</strong>
+              <span>Login o alta</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="investor-login-card" id="login-card" data-investor-login novalidate>
+          <div class="form-heading">
+            <p class="eyebrow">Acceso inversor</p>
+            <h2>Identifícate</h2>
+          </div>
+          <label>
+            Email o usuario
+            <input name="user" type="text" autocomplete="username" required />
+          </label>
+          <label>
+            Clave
+            <input name="password" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="button" type="submit">Entrar</button>
+          <p class="investor-login-note">
+            Si todavía no eres inversor, empieza por WhatsApp.
+          </p>
+          <p class="form-status" data-login-status role="status" aria-live="polite" hidden></p>
+        </form>
+      </section>
+
+      <section class="investor-dashboard" id="portal" data-dashboard hidden>
+        <section class="investor-welcome">
+          <div class="investor-welcome-copy">
+            <p class="eyebrow">Cartera privada</p>
+            <h1 data-investor-name>Inversor</h1>
+            <p data-investor-summary>Capital, intereses y cuotas.</p>
+          </div>
+          <aside class="identity-panel" aria-label="Datos del inversor">
+            <dl>
+              <div>
+                <dt>Nombre completo</dt>
+                <dd data-investor-full-name></dd>
+              </div>
+              <div>
+                <dt>Dirección</dt>
+                <dd data-investor-address></dd>
+              </div>
+              <div>
+                <dt>Número de cuenta</dt>
+                <dd data-investor-bank-account></dd>
+              </div>
+            </dl>
+          </aside>
+        </section>
+
+        <section class="portfolio-switcher" aria-label="Operaciones del inversor">
+          <div>
+            <p class="eyebrow">Operaciones</p>
+            <h2>Elige el contrato que quieres revisar</h2>
+          </div>
+          <div class="portfolio-tabs" data-contract-tabs></div>
+        </section>
+
+        <section class="investor-kpis" aria-label="Resumen financiero" data-kpis></section>
+
+        <section class="investor-charts" aria-label="Gráficos de la inversión">
+          <article class="chart-panel">
+            <div class="chart-heading">
+              <div>
+                <p class="eyebrow">Crecimiento acumulado</p>
+                <h2>Principal recuperado + intereses acumulados</h2>
+              </div>
+              <span data-growth-total></span>
+            </div>
+            <svg class="growth-chart" data-growth-chart viewBox="0 0 640 280" role="img" aria-label="Gráfico de cobros acumulados y referencia del capital inicial"></svg>
+          </article>
+          <article class="chart-panel">
+            <div class="chart-heading">
+              <div>
+                <p class="eyebrow">Cuotas</p>
+                <h2>Principal e intereses por mes</h2>
+              </div>
+              <span data-next-payment></span>
+            </div>
+            <svg class="payment-chart" data-payment-chart viewBox="0 0 640 280" role="img" aria-label="Gráfico de cuotas mensuales"></svg>
+          </article>
+        </section>
+
+        <section class="investor-detail-grid">
+          <article class="contract-panel" id="contrato">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Contrato seleccionado</p>
+                <h2 data-contract-title></h2>
+              </div>
+              <a class="button" href="#" target="_blank" rel="noopener" data-contract-link>Ver contrato</a>
+            </div>
+            <p class="contract-note">
+              Si no hay PDF cargado todavía, el botón abre la carpeta de Drive guardada en la base de datos.
+            </p>
+            <dl class="contract-facts" data-contract-facts></dl>
+          </article>
+
+          <article class="payments-panel" id="calendario">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Calendario de pagos</p>
+                <h2>Principal e intereses cada mes</h2>
+              </div>
+            </div>
+            <div class="payments-table-shell">
+              <table class="payments-table">
+                <thead>
+                  <tr>
+                    <th>Cuota</th>
+                    <th>Fecha</th>
+                    <th>Principal</th>
+                    <th>Intereses</th>
+                    <th>Total</th>
+                    <th>Pagado</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody data-payments-table></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="investor-support">
+          <div>
+            <p class="eyebrow">Atención al inversor</p>
+            <h2>¿Quieres ampliar capital o revisar una operación?</h2>
+          </div>
+          <a
+            class="whatsapp-button" data-analytics-id="whatsapp_cta"
+            href="https://wa.me/34635335513?text=Hola,%20soy%20inversor%20de%20Roberto%20Moraga%20y%20quiero%20revisar%20mi%20cartera."
+            target="_blank"
+            rel="noopener"
+          >
+            <img class="whatsapp-icon" src="../assets/whatsapp.svg" alt="" aria-hidden="true" />
+            Hablar por WhatsApp
+          </a>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">RM</span>
+        Roberto Moraga
+      </span>
+      <span>Portal privado de inversores con datos de demostración.</span>
+    </footer>
+  </body>
+</html>

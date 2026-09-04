@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Consolidate the alternate host so Google indexes one authoritative domain.
+RewriteCond %{HTTP_HOST} ^www\.roberto-moraga\.com$ [NC]
+RewriteRule ^ https://robertomoraga.com%{REQUEST_URI} [R=301,L]

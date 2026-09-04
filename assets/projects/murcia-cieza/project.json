@@ -1,0 +1,136 @@
+{
+  "slug": "murcia-cieza",
+  "order": 1,
+  "section": {
+    "es": "Vendemos",
+    "en": "Sell"
+  },
+  "title": {
+    "es": "Murcia Cieza",
+    "en": "Murcia Cieza"
+  },
+  "city": {
+    "es": "Murcia",
+    "en": "Murcia"
+  },
+  "summary": {
+    "es": "Vivienda de tres habitaciones con zona común compacta, cocina luminosa y equipamiento pensado para reducir mantenimiento.",
+    "en": "Three-room home with compact shared area, bright kitchen and equipment designed to reduce maintenance."
+  },
+  "metrics": {
+    "cost": {
+      "es": "68.500 €",
+      "en": "68,500 €"
+    },
+    "return": {
+      "es": "10,6%",
+      "en": "10.6%"
+    },
+    "timeline": {
+      "es": "12 semanas",
+      "en": "12 weeks"
+    }
+  },
+  "carousel": {
+    "model": {
+      "es": "Flip",
+      "en": "Flip"
+    },
+    "reform": {
+      "es": "Tres dormitorios, zona común hogareña, cocina resistente, baño renovado y equipamiento durable.",
+      "en": "Three bedrooms, compact shared area, hard-wearing kitchen, updated bathroom and durable equipment."
+    },
+    "economics": {
+      "es": "Coste total estimado: 68.500 euros. Rentabilidad objetivo: 10,6%. Puesta a punto: 12 semanas.",
+      "en": "Estimated total cost: 68,500 euros. Target return: 10.6%. Setup time: 12 weeks."
+    },
+    "stats": {
+      "es": ["3 hab.", "10,6% objetivo", "12 semanas"],
+      "en": ["3 rooms", "10.6% target", "12 weeks"]
+    }
+  },
+  "images": [
+    {
+      "file": "cover.png",
+      "alt": {
+        "es": "Terraza exterior al atardecer con vistas abiertas",
+        "en": "Outdoor terrace at sunset with open views"
+      },
+      "caption": {
+        "es": "Terraza exterior de la vivienda.",
+        "en": "Outdoor terrace of the property."
+      }
+    },
+    {
+      "file": "interior-1.jpeg",
+      "alt": {
+        "es": "Dormitorio principal con armarios y mobiliario completo.",
+        "en": "Main bedroom with wardrobes and full furniture."
+      },
+      "caption": {
+        "es": "Dormitorio principal con armarios y mobiliario completo.",
+        "en": "Main bedroom with wardrobes and full furniture."
+      }
+    },
+    {
+      "file": "interior-2.jpeg",
+      "alt": {
+        "es": "Estancia principal con buena entrada de luz.",
+        "en": "Main room with strong natural light."
+      },
+      "caption": {
+        "es": "Estancia principal con buena entrada de luz.",
+        "en": "Main room with strong natural light."
+      }
+    },
+    {
+      "file": "interior-3.jpeg",
+      "alt": {
+        "es": "Baño actualizado y fácil de mantener.",
+        "en": "Updated, easy-maintenance bathroom."
+      },
+      "caption": {
+        "es": "Baño actualizado y fácil de mantener.",
+        "en": "Updated, easy-maintenance bathroom."
+      }
+    }
+  ],
+  "scope": {
+    "es": [
+      "Tres dormitorios con mobiliario completo y almacenamiento útil.",
+      "Zona común compacta para maximizar superficie alquilable.",
+      "Cocina y baño revisados con materiales resistentes.",
+      "Preparación documental y comercial para ocupación progresiva."
+    ],
+    "en": [
+      "Three bedrooms with complete furniture and useful storage.",
+      "Compact shared area to maximize rentable surface.",
+      "Kitchen and bathroom reviewed with resistant materials.",
+      "Documentation and marketing preparation for progressive occupancy."
+    ]
+  },
+  "economics": {
+    "es": [
+      ["Señal/arras orientativa", "3.600 € dentro del precio"],
+      ["Precio de adquisición", "59.000 €"],
+      ["ITP, notaría y registro", "5.650 €"],
+      ["Agencia y cierre", "1.050 €"],
+      ["Puesta a punto y mobiliario", "7.000 €"],
+      ["Coste total estimado", "68.500 €"],
+      ["Rentabilidad objetivo", "10,6%"]
+    ],
+    "en": [
+      ["Indicative deposit", "3,600 € within purchase price"],
+      ["Purchase price", "59,000 €"],
+      ["Transfer tax, notary and registry", "5,650 €"],
+      ["Agency and closing", "1,050 €"],
+      ["Renovation and furniture", "7,000 €"],
+      ["Estimated total cost", "68,500 €"],
+      ["Target return", "10.6%"]
+    ]
+  },
+  "cta": {
+    "es": "Revisamos activos con mejora ligera, demanda medible y rentabilidad objetivo entre el 9% y el 13%.",
+    "en": "We review assets with light improvement, measurable demand and target returns between 9% and 13%."
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "slug": "murcia-centro",
+  "order": 2,
+  "section": {
+    "es": "Vendemos",
+    "en": "Sell"
+  },
+  "title": {
+    "es": "Murcia Centro",
+    "en": "Murcia Centro"
+  },
+  "city": {
+    "es": "Murcia",
+    "en": "Murcia"
+  },
+  "summary": {
+    "es": "Piso urbano de gama contenida con actualización parcial: pintura, cocina funcional, baño sencillo y repaso de instalaciones sin tocar estructura.",
+    "en": "Urban apartment with contained positioning and partial update: paint, functional kitchen, simple bathroom and a review of utilities without touching the structure."
+  },
+  "metrics": {
+    "cost": {
+      "es": "46.900 €",
+      "en": "46,900 €"
+    },
+    "return": {
+      "es": "11,4%",
+      "en": "11.4%"
+    },
+    "timeline": {
+      "es": "5 semanas",
+      "en": "5 weeks"
+    }
+  },
+  "carousel": {
+    "model": {
+      "es": "Puesta a punto ligera",
+      "en": "Light refurbishment"
+    },
+    "reform": {
+      "es": "Pintura, cocina funcional, baño sencillo, suelos resistentes y repaso de instalaciones. Sin calidades premium.",
+      "en": "Paint, functional kitchen, simple bathroom, hard-wearing floors and utility review. No premium finishes."
+    },
+    "economics": {
+      "es": "Coste total estimado: 46.900 euros. Rentabilidad objetivo: 11,4%. Puesta a punto: 5 semanas.",
+      "en": "Estimated total cost: 46,900 euros. Target return: 11.4%. Setup time: 5 weeks."
+    },
+    "stats": {
+      "es": ["2 hab.", "11,4% objetivo", "5 semanas"],
+      "en": ["2 rooms", "11.4% target", "5 weeks"]
+    }
+  },
+  "images": [
+    {
+      "file": "cover.png",
+      "alt": {
+        "es": "Salón modesto con luz natural y mobiliario funcional",
+        "en": "Modest living room with natural light and functional furniture"
+      },
+      "caption": {
+        "es": "Zona común limpia y sin lujo.",
+        "en": "Clean shared area without luxury finishes."
+      }
+    },
+    {
+      "file": "interior-1.png",
+      "alt": {
+        "es": "Cocina sencilla con acabados estándar y uso diario",
+        "en": "Simple kitchen with standard finishes and everyday use"
+      },
+      "caption": {
+        "es": "Cocina funcional sin calidades premium.",
+        "en": "Functional kitchen without premium finishes."
+      }
+    },
+    {
+      "file": "interior-2.png",
+      "alt": {
+        "es": "Dormitorio sencillo preparado para uso inmediato",
+        "en": "Simple bedroom prepared for immediate use"
+      },
+      "caption": {
+        "es": "Dormitorio limpio y funcional.",
+        "en": "Clean and functional bedroom."
+      }
+    },
+    {
+      "file": "interior-3.png",
+      "alt": {
+        "es": "Baño sencillo con materiales estándar",
+        "en": "Simple bathroom with standard materials"
+      },
+      "caption": {
+        "es": "Baño correcto, limpio y sin lujo.",
+        "en": "Correct, clean bathroom without luxury."
+      }
+    }
+  ],
+  "scope": {
+    "es": [
+      "Actualización de cocina y baño sin tocar elementos estructurales.",
+      "Pintura lavable, suelo resistente y carpintería revisada.",
+      "Suministros, limpieza técnica y reportaje comercial.",
+      "Salida a alquiler tradicional o por habitaciones según demanda final."
+    ],
+    "en": [
+      "Kitchen and bathroom update without structural intervention.",
+      "Washable paint, hard-wearing floor and reviewed carpentry.",
+      "Utility setup, technical cleaning and commercial photography.",
+      "Traditional or room-by-room rental launch depending on final demand."
+    ]
+  },
+  "economics": {
+    "es": [
+      ["Señal/arras orientativa", "2.900 € dentro del precio"],
+      ["Precio de adquisición", "37.900 €"],
+      ["ITP, notaría y registro", "3.860 €"],
+      ["Agencia y cierre", "740 €"],
+      ["Puesta a punto y mobiliario", "4.400 €"],
+      ["Coste total estimado", "46.900 €"],
+      ["Rentabilidad objetivo", "11,4%"]
+    ],
+    "en": [
+      ["Indicative deposit", "2,900 € within purchase price"],
+      ["Purchase price", "37,900 €"],
+      ["Transfer tax, notary and registry", "3,860 €"],
+      ["Agency and closing", "740 €"],
+      ["Renovation and furniture", "4,400 €"],
+      ["Estimated total cost", "46,900 €"],
+      ["Target return", "11.4%"]
+    ]
+  },
+  "cta": {
+    "es": "Revisamos activos con puesta a punto contenida, acabados estándar y salida comercial rápida.",
+    "en": "We review assets with contained renovation, standard finishes and a fast commercial exit."
+  }
+}

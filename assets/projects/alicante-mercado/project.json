@@ -1,0 +1,136 @@
+{
+  "slug": "alicante-mercado",
+  "order": 4,
+  "section": {
+    "es": "Vendemos",
+    "en": "Sell"
+  },
+  "title": {
+    "es": "Alicante Mercado",
+    "en": "Alicante Mercado"
+  },
+  "city": {
+    "es": "Alicante",
+    "en": "Alicante"
+  },
+  "summary": {
+    "es": "Piso para reposicionar con limpieza de fondo, pintura, cocina actualizada y baño correcto, sin apariencia de vivienda de catálogo.",
+    "en": "Apartment to reposition with deep cleaning, paint, updated kitchen and a correct bathroom, without a catalog-home look."
+  },
+  "metrics": {
+    "cost": {
+      "es": "61.200 €",
+      "en": "61,200 €"
+    },
+    "return": {
+      "es": "12,3%",
+      "en": "12.3%"
+    },
+    "timeline": {
+      "es": "5 semanas",
+      "en": "5 weeks"
+    }
+  },
+  "carousel": {
+    "model": {
+      "es": "Puesta a punto",
+      "en": "Refresh and reposition"
+    },
+    "reform": {
+      "es": "Actualización estética contenida, cocina revisada, baño correcto y carpintería ajustada. Sin lujo, sin sobrediseño.",
+      "en": "Contained aesthetic update, reviewed kitchen, correct bathroom and adjusted carpentry. No luxury, no over-design."
+    },
+    "economics": {
+      "es": "Coste total estimado: 61.200 euros. Rentabilidad objetivo: 12,3%. Puesta a punto: 5 semanas.",
+      "en": "Estimated total cost: 61,200 euros. Target return: 12.3%. Setup time: 5 weeks."
+    },
+    "stats": {
+      "es": ["2 hab.", "12,3% objetivo", "5 semanas"],
+      "en": ["2 rooms", "12.3% target", "5 weeks"]
+    }
+  },
+  "images": [
+    {
+      "file": "cover.png",
+      "alt": {
+        "es": "Salón compacto con luz natural y mobiliario sencillo",
+        "en": "Compact living room with natural light and simple furniture"
+      },
+      "caption": {
+        "es": "Estancia principal limpia y sin lujo.",
+        "en": "Main room clean and without luxury."
+      }
+    },
+    {
+      "file": "interior-1.png",
+      "alt": {
+        "es": "Cocina actualizada con acabados estándar",
+        "en": "Updated kitchen with standard finishes"
+      },
+      "caption": {
+        "es": "Cocina práctica para uso diario.",
+        "en": "Practical kitchen for daily use."
+      }
+    },
+    {
+      "file": "interior-2.png",
+      "alt": {
+        "es": "Dormitorio sencillo preparado para visita comercial",
+        "en": "Simple bedroom prepared for commercial visits"
+      },
+      "caption": {
+        "es": "Dormitorio neutro y fácil de enseñar.",
+        "en": "Neutral bedroom easy to show."
+      }
+    },
+    {
+      "file": "interior-3.png",
+      "alt": {
+        "es": "Baño correcto con materiales estándar",
+        "en": "Correct bathroom with standard materials"
+      },
+      "caption": {
+        "es": "Baño limpio, correcto y sin lujo.",
+        "en": "Clean, correct bathroom without luxury."
+      }
+    }
+  ],
+  "scope": {
+    "es": [
+      "Mejora visual con obra contenida.",
+      "Cocina, baño y carpintería revisados.",
+      "Pintura y puesta en escena para fotografía y visita.",
+      "Estrategia de salida por venta o explotación corta según demanda."
+    ],
+    "en": [
+      "Visual improvement with contained works.",
+      "Kitchen, bathroom and carpentry reviewed.",
+      "Paint and staging for photography and visits.",
+      "Exit strategy through sale or short-term operation depending on demand."
+    ]
+  },
+  "economics": {
+    "es": [
+      ["Señal/arras orientativa", "3.400 € dentro del precio"],
+      ["Precio de adquisición", "49.500 €"],
+      ["ITP, notaría y registro", "5.100 €"],
+      ["Agencia y cierre", "950 €"],
+      ["Puesta a punto y mobiliario", "5.650 €"],
+      ["Coste total estimado", "61.200 €"],
+      ["Rentabilidad objetivo", "12,3%"]
+    ],
+    "en": [
+      ["Indicative deposit", "3,400 € within purchase price"],
+      ["Purchase price", "49,500 €"],
+      ["Transfer tax, notary and registry", "5,100 €"],
+      ["Agency and closing", "950 €"],
+      ["Renovation and furniture", "5,650 €"],
+      ["Estimated total cost", "61,200 €"],
+      ["Target return", "12.3%"]
+    ]
+  },
+  "cta": {
+    "es": "Revisamos activos con mejora moderada, demanda medible y presupuesto contenido.",
+    "en": "We review assets with moderate improvement, measurable demand and a contained budget."
+  }
+}

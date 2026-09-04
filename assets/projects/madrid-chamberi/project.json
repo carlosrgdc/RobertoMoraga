@@ -1,0 +1,136 @@
+{
+  "slug": "madrid-chamberi",
+  "order": 4,
+  "section": {
+    "es": "Vendemos",
+    "en": "Sell"
+  },
+  "title": {
+    "es": "Madrid Chamberí",
+    "en": "Madrid Chamberí"
+  },
+  "city": {
+    "es": "Madrid",
+    "en": "Madrid"
+  },
+  "summary": {
+    "es": "Piso de tres habitaciones con puesta a punto ligera y acabados correctos, orientado a uso por estancias sin recurrir a calidades premium.",
+    "en": "Three-bedroom apartment with light renovation and correct finishes, aimed at room-by-room use without premium materials."
+  },
+  "metrics": {
+    "cost": {
+      "es": "57.800 €",
+      "en": "57,800 €"
+    },
+    "return": {
+      "es": "9,8%",
+      "en": "9.8%"
+    },
+    "timeline": {
+      "es": "6 semanas",
+      "en": "6 weeks"
+    }
+  },
+  "carousel": {
+    "model": {
+      "es": "Alquiler por habitaciones",
+      "en": "Room-by-room rental"
+    },
+    "reform": {
+      "es": "Redistribución ligera, pintura, iluminación cálida, mobiliario funcional y cerraduras por estancia.",
+      "en": "Light redistribution, paint, warm lighting, functional furniture and room-by-room access locks."
+    },
+    "economics": {
+      "es": "Coste total estimado: 57.800 euros. Rentabilidad objetivo: 9,8%. Puesta a punto: 6 semanas.",
+      "en": "Estimated total cost: 57,800 euros. Target return: 9.8%. Setup time: 6 weeks."
+    },
+    "stats": {
+      "es": ["3 hab.", "9,8% objetivo", "6 semanas"],
+      "en": ["3 rooms", "9.8% target", "6 weeks"]
+    }
+  },
+  "images": [
+    {
+      "file": "cover.png",
+      "alt": {
+        "es": "Salón modesto con luz natural y acabado correcto",
+        "en": "Modest living room with natural light and a correct finish"
+      },
+      "caption": {
+        "es": "Zona común sencilla y bien resuelta.",
+        "en": "Simple and well-resolved shared area."
+      }
+    },
+    {
+      "file": "interior-1.png",
+      "alt": {
+        "es": "Dormitorio sencillo preparado para alquiler",
+        "en": "Simple bedroom prepared for rental"
+      },
+      "caption": {
+        "es": "Dormitorio funcional y neutro.",
+        "en": "Functional and neutral bedroom."
+      }
+    },
+    {
+      "file": "interior-2.png",
+      "alt": {
+        "es": "Cocina sencilla con acabados estándar",
+        "en": "Simple kitchen with standard finishes"
+      },
+      "caption": {
+        "es": "Cocina práctica para el día a día.",
+        "en": "Practical kitchen for everyday use."
+      }
+    },
+    {
+      "file": "interior-3.png",
+      "alt": {
+        "es": "Baño básico con materiales estándar",
+        "en": "Basic bathroom with standard materials"
+      },
+      "caption": {
+        "es": "Baño correcto, limpio y sin lujo.",
+        "en": "Correct, clean bathroom without luxury."
+      }
+    }
+  ],
+  "scope": {
+    "es": [
+      "Redistribución ligera para mejorar circulación y zonas comunes.",
+      "Pintura, iluminación cálida y mobiliario funcional de rotación resistente.",
+      "Cerraduras por estancia y revisión de instalaciones antes de entrada.",
+      "Alta operativa del activo con reportaje, pricing y calendario de ocupación."
+    ],
+    "en": [
+      "Light redistribution to improve circulation and shared areas.",
+      "Paint, warm lighting and durable functional furniture.",
+      "Room-by-room locks and installation review before move-in.",
+      "Operational launch with photography, pricing and occupancy calendar."
+    ]
+  },
+  "economics": {
+    "es": [
+      ["Señal/arras orientativa", "3.200 € dentro del precio"],
+      ["Precio de adquisición", "45.600 €"],
+      ["ITP, notaría y registro", "4.850 €"],
+      ["Agencia y cierre", "800 €"],
+      ["Puesta a punto y mobiliario", "6.550 €"],
+      ["Coste total estimado", "57.800 €"],
+      ["Rentabilidad objetivo", "9,8%"]
+    ],
+    "en": [
+      ["Indicative deposit", "3,200 € within purchase price"],
+      ["Purchase price", "45,600 €"],
+      ["Transfer tax, notary and registry", "4,850 €"],
+      ["Agency and closing", "800 €"],
+      ["Renovation and furniture", "6,550 €"],
+      ["Estimated total cost", "57,800 €"],
+      ["Target return", "9.8%"]
+    ]
+  },
+  "cta": {
+    "es": "Revisamos activos con mejora ligera, demanda medible y acabados correctos.",
+    "en": "We review assets with light improvement, measurable demand and correct finishes."
+  }
+}

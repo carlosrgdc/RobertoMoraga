@@ -567,6 +567,8 @@ body.marketing-page .site-header {
 .review-badge { color: var(--rust); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; }
 .review-card blockquote { margin: 0; color: var(--ink); font-size: 1rem; line-height: 1.65; }
 .review-card-link { color: var(--forest); font-size: 0.82rem; font-weight: 800; }
+.review-author { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); }
+.reviewer-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(216, 166, 64, 0.55); background: var(--gold); }
 .review-card:hover { transform: translateY(-4px); box-shadow: 0 22px 40px rgba(23, 32, 29, 0.14); }
 .review-stars { color: var(--gold); font-size: 1.2rem; letter-spacing: 0.12em; }
 .review-card p { margin: 0; color: var(--ink); line-height: 1.6; }

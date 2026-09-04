@@ -1804,6 +1804,19 @@
     }
   }
 
+  function initReviewStars() {
+    document.querySelectorAll(".review-stars").forEach((node) => {
+      const rating = Math.max(0, Math.min(5, Number(node.dataset.rating || (node.textContent.match(/★/g) || []).length)));
+      node.replaceChildren(...Array.from({ length: 5 }, (_, index) => {
+        const star = document.createElement("span");
+        star.className = index < rating ? "review-star review-star--filled" : "review-star review-star--empty";
+        star.textContent = "★";
+        star.setAttribute("aria-hidden", "true");
+        return star;
+      }));
+    });
+  }
+
   function initMediaModal() {
     const mediaCards = Array.from(document.querySelectorAll('.history-card[href*="youtu.be"], .history-card[href*="youtube.com"], .history-card[href*="instagram.com/reel"], .history-card[href*="instagram.com/p/"]'));
     if (!mediaCards.length) {
@@ -1940,6 +1953,7 @@
     }
     trackScrollDepth();
     initCounters();
+    initReviewStars();
     initMediaModal();
     initHistoryExpansion();
     arrangeLandingSections();

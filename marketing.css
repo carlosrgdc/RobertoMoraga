@@ -579,7 +579,9 @@ body.marketing-page .site-header {
 .reviewer-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(216, 166, 64, 0.55); background: var(--gold); }
 .reviewer-avatar--initials { display: inline-grid; place-items: center; color: var(--ink); font-size: 0.72rem; font-weight: 800; }
 .review-card:hover { transform: translateY(-4px); box-shadow: 0 22px 40px rgba(23, 32, 29, 0.14); }
-.review-stars { color: var(--gold); font-size: 1.2rem; letter-spacing: 0.12em; }
+.review-stars { display: inline-flex; gap: 2px; font-size: 1.2rem; line-height: 1; letter-spacing: 0; }
+.review-star--filled { color: var(--gold); }
+.review-star--empty { color: #b8c0bc; }
 .review-card p { margin: 0; color: var(--ink); line-height: 1.6; }
 .review-card footer { display: grid; gap: 4px; align-self: end; border-top: 1px solid var(--line); padding-top: 12px; }
 .review-card footer span { color: var(--muted); font-size: 0.78rem; font-weight: 700; }

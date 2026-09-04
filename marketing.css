@@ -513,7 +513,7 @@ body.marketing-page .site-header {
 .faq-item[open] summary::after { content: "−"; }
 .faq-item p { margin: 0; padding: 0 20px 20px; color: var(--muted); line-height: 1.65; }
 .google-review-source { display: inline-flex; align-items: center; gap: 6px; }
-.google-maps-logo { display: inline-grid; width: 18px; height: 18px; place-items: center; border-radius: 50%; background: conic-gradient(#4285f4 0 25%, #34a853 25% 50%, #fbbc05 50% 75%, #ea4335 75%); color: #fff; font-size: 0.7rem; font-weight: 900; }
+.google-maps-logo { display: block; flex: 0 0 1em; width: 1em; height: 1em; border-radius: 0.22em; object-fit: cover; }
 .history-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; min-width: 0; }
 .history-card { display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px; min-width: 0; min-height: 100%; padding: 14px; border: 1px solid rgba(36, 76, 62, 0.14); border-radius: 20px; background: rgba(255, 255, 255, 0.72); box-shadow: 0 14px 30px rgba(23, 32, 29, 0.08); overflow: hidden; transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 .history-card:hover { transform: translateY(-7px); border-color: rgba(216, 166, 64, 0.65); box-shadow: 0 24px 42px rgba(23, 32, 29, 0.16); }

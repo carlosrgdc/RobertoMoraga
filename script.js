@@ -1835,7 +1835,7 @@
         : url.searchParams.get("v");
       const instagramMatch = url.pathname.match(/\/(reel|p)\/([^/]+)/);
       const embedUrl = isInstagram && instagramMatch
-        ? `https://www.instagram.com/${instagramMatch[1]}/${instagramMatch[2]}/embed/`
+        ? `https://www.instagram.com/${instagramMatch[1]}/${instagramMatch[2]}/embed/?hidecaption=1&maxwidth=658`
         : youtubeId
           ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?autoplay=1&rel=0`
           : "";

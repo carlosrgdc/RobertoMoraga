@@ -1811,16 +1811,13 @@
     modal.hidden = true;
     modal.innerHTML = `
       <div class="media-modal-backdrop" data-media-modal-close></div>
-      <div class="media-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="media-modal-title">
+      <div class="media-modal-dialog" role="dialog" aria-modal="true" aria-label="${pageLanguage === "en" ? "Featured content" : "Contenido destacado"}">
         <button class="media-modal-close" type="button" aria-label="${pageLanguage === "en" ? "Close video" : "Cerrar vídeo"}" data-media-modal-close>×</button>
-        <h2 id="media-modal-title" class="sr-only">${pageLanguage === "en" ? "Media player" : "Reproductor multimedia"}</h2>
         <div class="media-modal-frame"></div>
-        <a class="media-modal-fallback" target="_blank" rel="noopener"></a>
       </div>`;
     document.body.appendChild(modal);
 
     const frame = modal.querySelector(".media-modal-frame");
-    const fallback = modal.querySelector(".media-modal-fallback");
     let lastFocusedElement = null;
 
     function closeModal() {
@@ -1854,10 +1851,6 @@
       iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
       iframe.allowFullscreen = true;
       frame.replaceChildren(iframe);
-      fallback.href = card.href;
-      fallback.textContent = isInstagram
-        ? (pageLanguage === "en" ? "Open on Instagram" : "Abrir en Instagram")
-        : (pageLanguage === "en" ? "Open on YouTube" : "Abrir en YouTube");
       lastFocusedElement = document.activeElement;
       modal.hidden = false;
       document.body.classList.add("media-modal-open");

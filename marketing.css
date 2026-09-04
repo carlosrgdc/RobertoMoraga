@@ -476,7 +476,7 @@ body.marketing-page .site-header {
 .owner-management h2,
 .owner-management .success-intro,
 .owner-management-copy p { color: #fff; }
-.owner-management h2 { max-width: 15ch; }
+.owner-management h2 { max-width: none; width: 100%; font-family: inherit; font-size: clamp(2.1rem, 5vw, 4.4rem); line-height: 1.02; text-wrap: balance; }
 .owner-management-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
@@ -500,8 +500,10 @@ body.marketing-page .site-header {
 .history-card--top { order: 1; }
 .history-card--featured { order: 2; }
 .history-card--extra[hidden] { display: none; }
-.history-more-button { display: block; margin: 26px auto 0; padding: 12px 24px; border: 1px solid var(--gold); border-radius: 999px; background: transparent; color: var(--green); font: inherit; font-weight: 800; cursor: pointer; }
-.history-more-button:hover { background: var(--gold); color: var(--ink); }
+.history-more-button { display: flex; width: fit-content; margin: 26px auto 0; padding: 13px 28px; border: 1px solid rgba(34, 177, 94, 0.42); border-radius: 999px; background: linear-gradient(135deg, rgba(34, 177, 94, 0.98), rgba(18, 140, 74, 1)); color: #fff; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 14px 30px rgba(18, 140, 74, 0.24); transition: transform 180ms ease, box-shadow 180ms ease; }
+.history-more-button:hover { color: #fff; transform: translateY(-3px); box-shadow: 0 19px 36px rgba(18, 140, 74, 0.32); }
+.history-more-button:focus-visible { outline: 3px solid rgba(216, 166, 64, 0.72); outline-offset: 4px; }
+.history-social-section { margin-top: 54px; }
 .faq-section { scroll-margin-top: 90px; }
 .faq-list { display: grid; gap: 12px; max-width: 900px; margin: 28px auto 0; }
 .faq-item { border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, 0.74); box-shadow: 0 10px 24px rgba(23, 32, 29, 0.05); }
@@ -577,3 +579,4 @@ body.media-modal-open { overflow: hidden; }
 @media (max-width: 1100px) { .history-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 720px) { .owner-management-grid { grid-template-columns: 1fr; } }
 @media (max-width: 650px) { .history-grid { grid-template-columns: 1fr; } }
+@media (max-width: 650px) { .owner-management h2 { font-size: clamp(2rem, 10vw, 3.15rem); line-height: 1.04; } .process-step { grid-template-columns: 42px 1fr; gap: 11px; padding: 15px 0; } .history-more-button { margin-top: 22px; } }

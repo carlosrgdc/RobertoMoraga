@@ -1886,11 +1886,20 @@
     }
 
     const extraCards = Array.from(document.querySelectorAll(".history-card--extra"));
+    const historySection = button.closest(".history-inline");
+    const socialSection = document.querySelector(".history-social-section");
+    if (historySection && socialSection) {
+      historySection.append(socialSection);
+      socialSection.hidden = true;
+    }
     button.addEventListener("click", () => {
       const isExpanded = button.dataset.expanded === "true";
       extraCards.forEach((card) => {
         card.hidden = isExpanded;
       });
+      if (socialSection) {
+        socialSection.hidden = isExpanded;
+      }
       button.dataset.expanded = String(!isExpanded);
       button.textContent = isExpanded
         ? (pageLanguage === "en" ? "View more" : "Ver más")

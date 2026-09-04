@@ -171,6 +171,12 @@ a {
     opacity var(--soft-transition);
 }
 
+.top-nav a[href*="nuestra-historia"],
+.top-nav a[href*="#nuestra-historia"],
+.top-nav a[href*="#our-story"],
+.top-nav a[href*="sobre-roberto"] { order: 3; }
+.top-nav a[href*="inversores"] { order: 4; }
+
 .top-nav a::after {
   content: "";
   position: absolute;

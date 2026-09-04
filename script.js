@@ -1583,21 +1583,25 @@
       .attr("data-province-name", (feature) => feature.properties.name)
       .attr("d", path);
 
-    const pinCoordinates = [
-      // 24 pins in central Madrid: the main concentration.
-      [-3.71, 40.42], [-3.70, 40.45], [-3.68, 40.40], [-3.66, 40.43], [-3.75, 40.41],
-      [-3.72, 40.39], [-3.69, 40.38], [-3.64, 40.41], [-3.77, 40.44], [-3.73, 40.47],
-      [-3.67, 40.47], [-3.61, 40.44], [-3.79, 40.40], [-3.76, 40.36], [-3.69, 40.34],
-      [-3.62, 40.37], [-3.57, 40.42], [-3.81, 40.46], [-3.74, 40.50], [-3.65, 40.51],
-      [-3.67, 40.45], [-3.70, 40.41], [-3.73, 40.43], [-3.63, 40.46],
-      // 14 pins distributed through the Madrid metropolitan area.
-      [-3.73, 40.31], [-3.77, 40.33], [-3.83, 40.35], [-3.80, 40.28],
-      [-3.86, 40.32], [-3.87, 40.47], [-3.81, 40.44], [-3.64, 40.54],
-      [-3.62, 40.55], [-3.56, 40.42], [-3.48, 40.46], [-3.36, 40.48],
-      [-3.53, 40.33], [-3.68, 40.19],
-      // Exactly 2 pins in Toledo.
-      [-4.03, 39.86], [-4.02, 39.88],
+    // Keep the visual distribution aligned with the 141 managed homes shown above.
+    const centralPins = Array.from({ length: 99 }, (_, index) => {
+      const angle = index * 2.399963;
+      const radius = 0.015 + (index % 11) * 0.006;
+      return [-3.704 + Math.cos(angle) * radius, 40.416 + Math.sin(angle) * radius * 0.72];
+    });
+    const metropolitanPins = Array.from({ length: 28 }, (_, index) => {
+      const angle = index * 2.618;
+      const radius = 0.11 + (index % 7) * 0.025;
+      return [-3.704 + Math.cos(angle) * radius, 40.416 + Math.sin(angle) * radius * 0.72];
+    });
+    const outsidePins = [
+      [-4.03, 39.86], [-4.02, 39.88], // Toledo
+      [-3.58, 41.00], [-3.50, 41.02], [-3.35, 40.95], // Guadalajara
+      [-4.10, 40.65], [-4.00, 40.70], [-4.18, 40.60], // Avila
+      [-3.98, 41.02], [-3.85, 41.08], // Segovia
+      [-2.95, 40.05], [-2.85, 40.12], [-3.05, 40.20], [-3.15, 39.98], // Cuenca
     ];
+    const pinCoordinates = [...centralPins, ...metropolitanPins, ...outsidePins];
 
     pinLayer.selectAll("circle")
       .data(pinCoordinates)
@@ -1875,6 +1879,40 @@
     });
   }
 
+  function initHistoryExpansion() {
+    const button = document.querySelector("[data-history-more]");
+    if (!button) {
+      return;
+    }
+
+    const extraCards = Array.from(document.querySelectorAll(".history-card--extra"));
+    button.addEventListener("click", () => {
+      const isExpanded = button.dataset.expanded === "true";
+      extraCards.forEach((card) => {
+        card.hidden = isExpanded;
+      });
+      button.dataset.expanded = String(!isExpanded);
+      button.textContent = isExpanded
+        ? (pageLanguage === "en" ? "View more" : "Ver más")
+        : (pageLanguage === "en" ? "View less" : "Ver menos");
+    });
+  }
+
+  function arrangeLandingSections() {
+    const main = document.querySelector("main");
+    const history = document.querySelector("#nuestra-historia, #our-story");
+    const management = document.querySelector("#gestionamos-tu-vivienda, #manage-your-property");
+    const faq = document.querySelector("#preguntas-frecuentes, #frequently-asked-questions");
+    const reviews = document.querySelector("#opiniones");
+    if (!main || !history || !management || !faq || !reviews) {
+      return;
+    }
+
+    main.insertBefore(management, history.nextElementSibling);
+    main.insertBefore(faq, management.nextElementSibling);
+    main.insertBefore(reviews, faq.nextElementSibling);
+  }
+
   function bootstrap() {
     primeCaseCarouselLayout();
     loadProjectCatalogs().finally(() => {
@@ -1894,6 +1932,8 @@
     trackScrollDepth();
     initCounters();
     initMediaModal();
+    initHistoryExpansion();
+    arrangeLandingSections();
     renderIberiaMap().catch((error) => {
       console.error("Error al renderizar el mapa:", error);
       showMapFallback();

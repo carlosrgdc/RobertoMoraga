@@ -491,6 +491,27 @@ body.marketing-page .site-header {
 .owner-promise-list li { display: grid; gap: 5px; padding: 17px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.24); }
 .owner-promise-list strong { font-size: 1.05rem; }
 .owner-promise-list span { color: rgba(255, 255, 255, 0.72); line-height: 1.5; }
+.process-steps { display: grid; gap: 0; }
+.process-step { display: grid; grid-template-columns: 54px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.24); }
+.process-step > span { color: var(--gold); font-size: 1rem; font-weight: 900; letter-spacing: 0.08em; }
+.process-step h3, .process-step p { margin: 0; }
+.process-step h3 { color: #fff; font-size: 1.05rem; }
+.process-step p { margin-top: 5px; color: rgba(255, 255, 255, 0.74); line-height: 1.5; }
+.history-card--top { order: 1; }
+.history-card--featured { order: 2; }
+.history-card--extra[hidden] { display: none; }
+.history-more-button { display: block; margin: 26px auto 0; padding: 12px 24px; border: 1px solid var(--gold); border-radius: 999px; background: transparent; color: var(--green); font: inherit; font-weight: 800; cursor: pointer; }
+.history-more-button:hover { background: var(--gold); color: var(--ink); }
+.faq-section { scroll-margin-top: 90px; }
+.faq-list { display: grid; gap: 12px; max-width: 900px; margin: 28px auto 0; }
+.faq-item { border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, 0.74); box-shadow: 0 10px 24px rgba(23, 32, 29, 0.05); }
+.faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; color: var(--ink); font-weight: 800; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--gold); font-size: 1.4rem; line-height: 1; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { margin: 0; padding: 0 20px 20px; color: var(--muted); line-height: 1.65; }
+.google-review-source { display: inline-flex; align-items: center; gap: 6px; }
+.google-maps-logo { display: inline-grid; width: 18px; height: 18px; place-items: center; border-radius: 50%; background: conic-gradient(#4285f4 0 25%, #34a853 25% 50%, #fbbc05 50% 75%, #ea4335 75%); color: #fff; font-size: 0.7rem; font-weight: 900; }
 .history-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; min-width: 0; }
 .history-card { display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px; min-width: 0; min-height: 100%; padding: 14px; border: 1px solid rgba(36, 76, 62, 0.14); border-radius: 20px; background: rgba(255, 255, 255, 0.72); box-shadow: 0 14px 30px rgba(23, 32, 29, 0.08); overflow: hidden; transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 .history-card:hover { transform: translateY(-7px); border-color: rgba(216, 166, 64, 0.65); box-shadow: 0 24px 42px rgba(23, 32, 29, 0.16); }

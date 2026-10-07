@@ -1596,7 +1596,19 @@
     const viewBox = (map.getAttribute("viewBox") || "0 0 760 500").split(/\s+/).map(Number);
     const width = viewBox[2] || 760;
     const height = viewBox[3] || 500;
+    const isMobileMap = window.matchMedia?.("(max-width: 720px)").matches;
     const projection = d3.geoMercator().fitExtent([[24, 24], [width - 24, height - 24]], collection);
+    if (isMobileMap) {
+      const mapCenter = d3.geoCentroid(collection);
+      const centerBeforeZoom = projection(mapCenter);
+      projection.scale(projection.scale() * 1.45);
+      const centerAfterZoom = projection(mapCenter);
+      const [translateX, translateY] = projection.translate();
+      projection.translate([
+        translateX + centerBeforeZoom[0] - centerAfterZoom[0],
+        translateY + centerBeforeZoom[1] - centerAfterZoom[1],
+      ]);
+    }
     const path = d3.geoPath(projection);
     const svg = d3.select(map);
     const provinceLayer = svg.select('[data-madrid-map="provinces"]');

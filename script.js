@@ -576,22 +576,16 @@
     }
 
     try {
-      const response = await fetch(`./api/projects.php?lang=${pageLanguage}`, {
-        cache: "no-store",
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
+      if (!window.RMProjects?.loadCatalog) {
+        throw new Error("No está disponible el cargador de proyectos");
       }
 
-      const payload = await response.json();
-      if (!Array.isArray(payload.projects) || !payload.projects.length) {
+      const projects = await window.RMProjects.loadCatalog();
+      if (!projects.length) {
         return false;
       }
 
-      renderProjectCatalog(payload.projects);
+      renderProjectCatalog(projects);
       return true;
     } catch (error) {
       console.warn("No se pudo cargar el catálogo de proyectos", error);

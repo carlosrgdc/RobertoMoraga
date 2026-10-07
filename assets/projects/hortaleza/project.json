@@ -13,6 +13,10 @@
     "es": "Hortaleza",
     "en": "Hortaleza"
   },
+  "location": {
+    "longitude": -3.642,
+    "latitude": 40.474
+  },
   "summary": {
     "es": "Vivienda acondicionada para alquiler, con espacios funcionales y acabados preparados para el uso diario.",
     "en": "Property prepared for rental, with functional spaces and finishes ready for everyday use."

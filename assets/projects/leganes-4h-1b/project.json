@@ -13,6 +13,10 @@
     "es": "Leganés",
     "en": "Leganes"
   },
+  "location": {
+    "longitude": -3.744,
+    "latitude": 40.327
+  },
   "summary": {
     "es": "Vivienda acondicionada para alquiler, con espacios funcionales y acabados preparados para el uso diario.",
     "en": "Property prepared for rental, with functional spaces and finishes ready for everyday use."

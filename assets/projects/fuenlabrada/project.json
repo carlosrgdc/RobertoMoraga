@@ -13,6 +13,10 @@
     "es": "Fuenlabrada",
     "en": "Fuenlabrada"
   },
+  "location": {
+    "longitude": -3.803,
+    "latitude": 40.284
+  },
   "summary": {
     "es": "Vivienda acondicionada para alquiler, con espacios funcionales y acabados preparados para el uso diario.",
     "en": "Property prepared for rental, with functional spaces and finishes ready for everyday use."

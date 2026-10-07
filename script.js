@@ -120,6 +120,7 @@
   let provinceStatusConfigPromise = null;
   let scrollTicking = false;
   let formSwitchTimer = null;
+  let selectedProjectSlug = "";
 
   function normalizeText(value) {
     return (value || "")
@@ -128,6 +129,21 @@
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function syncMapProjectSelection(slug) {
+    selectedProjectSlug = slug || "";
+    document.querySelectorAll('.madrid-map [data-madrid-map="project-pins"] circle').forEach((pin) => {
+      const isActive = pin.dataset.projectSlug === selectedProjectSlug;
+      pin.classList.toggle("is-active", isActive);
+      pin.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function selectProjectFromMap(slug) {
+    window.dispatchEvent(new CustomEvent("roberto-moraga-map-project-select", {
+      detail: { slug, source: "map_pin" },
+    }));
   }
 
   function pushTrackingEvent(eventName, params = {}) {
@@ -515,6 +531,7 @@
     card.type = "button";
     card.dataset.caseCard = "";
     card.dataset.caseSection = project.section || "";
+    card.dataset.caseSlug = project.slug || "";
     card.dataset.caseTitle = project.title || "";
     card.dataset.caseCity = project.city || "";
     card.dataset.caseModel = project.carousel?.model || "";
@@ -667,6 +684,7 @@
         if (fields.link) {
           fields.link.href = card.dataset.caseUrl || "#casos";
         }
+        syncMapProjectSelection(card.dataset.caseSlug || "");
       }
 
       function render() {
@@ -698,6 +716,17 @@
           cards[activeIndex].focus({ preventScroll: true });
         }
       }
+
+      window.addEventListener("roberto-moraga-map-project-select", (event) => {
+        const slug = event.detail?.slug || "";
+        const projectIndex = cards.findIndex((card) => card.dataset.caseSlug === slug);
+        if (projectIndex < 0) {
+          return;
+        }
+
+        activate(projectIndex, false, event.detail?.source || "map_pin");
+        carousel.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
 
       function navigateToProject(card) {
         const url = card.dataset.caseUrl;
@@ -1572,6 +1601,7 @@
     const svg = d3.select(map);
     const provinceLayer = svg.select('[data-madrid-map="provinces"]');
     const pinLayer = svg.select('[data-madrid-map="pins"]');
+    const projectPinLayer = svg.select('[data-madrid-map="project-pins"]');
 
     provinceLayer.selectAll("path")
       .data(provinces)
@@ -1604,6 +1634,43 @@
       .attr("cx", ([longitude, latitude]) => projection([longitude, latitude])[0])
       .attr("cy", ([longitude, latitude]) => projection([longitude, latitude])[1])
       .attr("r", 5);
+
+    let projects = [];
+    try {
+      projects = await window.RMProjects?.loadCatalog?.() || [];
+    } catch (error) {
+      console.warn("No se pudieron cargar los proyectos para el mapa", error);
+    }
+
+    const mapProjects = projects.filter((project) => {
+      const longitude = Number(project.location?.longitude);
+      const latitude = Number(project.location?.latitude);
+      return project.slug && Number.isFinite(longitude) && Number.isFinite(latitude);
+    });
+
+    projectPinLayer.selectAll("circle")
+      .data(mapProjects, (project) => project.slug)
+      .join("circle")
+      .attr("class", "map-project-pin")
+      .attr("data-project-slug", (project) => project.slug)
+      .attr("role", "button")
+      .attr("tabindex", 0)
+      .attr("aria-label", (project) => `${project.title || project.city || project.slug}`)
+      .attr("cx", (project) => projection([project.location.longitude, project.location.latitude])[0])
+      .attr("cy", (project) => projection([project.location.longitude, project.location.latitude])[1])
+      .attr("r", 8)
+      .on("click", (event, project) => {
+        event.stopPropagation();
+        selectProjectFromMap(project.slug);
+      })
+      .on("keydown", (event, project) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          selectProjectFromMap(project.slug);
+        }
+      });
+
+    syncMapProjectSelection(selectedProjectSlug || mapProjects[0]?.slug || "");
 
     svg.selectAll("text.map-label").remove();
     provinceLayer.selectAll("path").each(function (feature) {
@@ -1917,12 +1984,19 @@
 
   function arrangeLandingSections() {
     const main = document.querySelector("main");
+    const cities = document.querySelector("#ciudades");
+    const cityLayout = cities?.querySelector(".city-layout");
+    const cases = document.querySelector("#casos, #cases");
     const history = document.querySelector("#nuestra-historia, #our-story");
     const management = document.querySelector("#gestionamos-tu-vivienda, #manage-your-property");
     const faq = document.querySelector("#preguntas-frecuentes, #frequently-asked-questions");
     const reviews = document.querySelector("#opiniones");
     if (!main || !history || !management || !faq || !reviews) {
       return;
+    }
+
+    if (cities && cityLayout && cases) {
+      cities.insertBefore(cases, cityLayout);
     }
 
     main.insertBefore(management, history.nextElementSibling);

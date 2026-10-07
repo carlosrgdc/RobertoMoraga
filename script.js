@@ -1593,10 +1593,8 @@
     });
     const outsidePins = [
       [-4.03, 39.86], [-4.02, 39.88], // Toledo
-      [-3.58, 41.00], [-3.50, 41.02], [-3.35, 40.95], // Guadalajara
+      [-3.46, 40.50], [-3.32, 40.58], [-3.18, 40.66], // Madrid-Guadalajara corridor
       [-4.10, 40.65], [-4.00, 40.70], [-4.18, 40.60], // Avila
-      [-3.98, 41.02], [-3.85, 41.08], // Segovia
-      [-2.95, 40.05], [-2.85, 40.12], [-3.05, 40.20], [-3.15, 39.98], // Cuenca
     ];
     const pinCoordinates = [...centralPins, ...metropolitanPins, ...outsidePins];
 

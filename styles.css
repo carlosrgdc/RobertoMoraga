@@ -342,7 +342,7 @@ a {
       rgba(20, 31, 28, 0.24)
     ),
     linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
-    url("./assets/projects/fuenlabrada/cover.jpeg");
+    url("./assets/hero-background.jpg");
   background-size: cover;
   background-position: center calc(50% + var(--hero-shift, 0px));
   animation: roberto-moragaHeroPhoto 1300ms var(--motion-spring) both;
@@ -478,7 +478,6 @@ h1 {
 }
 .owner-painpoint:hover { transform: translateY(-4px); border-color: rgba(255, 205, 130, 0.72); background: rgba(255, 255, 255, 0.19); }
 .owner-painpoint-icon { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 13px; background: #f0b43c; color: #32130e; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2); }
-.owner-painpoint-icon--emoji { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; font-size: 1.65rem; line-height: 1; }
 .owner-painpoint-icon svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
 .owner-painpoint strong { font-size: 1.04rem; line-height: 1.1; }
 .owner-painpoint > span:last-child { color: rgba(255, 255, 255, 0.76); font-size: 0.86rem; line-height: 1.35; }
@@ -3554,7 +3553,7 @@ input[type="range"] {
 .hero-photo {
   background:
     linear-gradient(0deg, rgba(20, 31, 28, 0.06), rgba(20, 31, 28, 0.02)),
-    url("./assets/projects/fuenlabrada/cover.jpeg");
+    url("./assets/hero-background.jpg");
   background-position: center;
   animation: none;
 }
@@ -3769,7 +3768,7 @@ input[type="range"] {
   background:
     linear-gradient(90deg, rgba(20, 31, 28, 0.92), rgba(20, 31, 28, 0.56) 46%, rgba(20, 31, 28, 0.24)),
     linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
-    url("./assets/projects/fuenlabrada/cover.jpeg");
+    url("./assets/hero-background.jpg");
   background-size: cover;
   background-position: center;
 }

@@ -27,8 +27,8 @@
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
   const labels = language === "en"
-    ? { home: "Home", catalog: "Projects", gallery: "Gallery", galleryTitle: "Project images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", contactTitle: "Tell us what you need and where the property is.", request: "Request information", whatsapp: "WhatsApp", similar: "If you want something similar, tell us", similarCopy: "We can help you assess whether it fits your property.", viewServices: "View services", viewProperty: "Property management" }
-    : { home: "Inicio", catalog: "Vendemos", gallery: "Galería", galleryTitle: "Imágenes del proyecto", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", contactTitle: "Cuéntanos qué necesitas y dónde está el inmueble.", request: "Solicitar información", whatsapp: "WhatsApp", similar: "Si quieres algo parecido, cuéntanoslo", similarCopy: "Te ayudamos a valorar si encaja con tu inmueble.", viewServices: "Ver servicios", viewProperty: "Gestionamos tu vivienda" };
+    ? { home: "Home", catalog: "Projects", gallery: "Gallery", galleryTitle: "Project images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", contactTitle: "Tell us what you need and where the property is.", request: "Request information", whatsapp: "WhatsApp", similar: "If you want something similar, tell us", similarCopy: "We can help you assess whether it fits your property." }
+    : { home: "Inicio", catalog: "Vendemos", gallery: "Galería", galleryTitle: "Imágenes del proyecto", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", contactTitle: "Cuéntanos qué necesitas y dónde está el inmueble.", request: "Solicitar información", whatsapp: "WhatsApp", similar: "Si quieres algo parecido, cuéntanoslo", similarCopy: "Te ayudamos a valorar si encaja con tu inmueble." };
 
   function render(project) {
     const title = t(project.title);
@@ -57,7 +57,7 @@
       <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.gallery}</p><h2>${labels.galleryTitle}</h2></div><div class="project-grid">${imageHtml}</div></section>
       <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.scope}</p><h2>${labels.scopeTitle}</h2></div><ul class="page-list">${scopeHtml}</ul></section>
       <section class="page-cta"><p class="page-kicker">${labels.contact}</p><strong>${labels.similar}</strong><p>${labels.similarCopy}</p><a class="button button-light" href="/contacto/">${labels.request}</a></section>
-      <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.contact}</p><h2>${labels.contactTitle}</h2></div><div class="related-links"><a href="https://wa.me/34635335513?text=${whatsappText}">${labels.whatsapp}</a><a href="/contacto/">${labels.request}</a><a href="/servicios/">${labels.viewServices}</a><a href="/servicios-para-propietarios/">${labels.viewProperty}</a><a href="${projectPath}">${title}</a></div></section>`;
+      <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.contact}</p><h2>${labels.contactTitle}</h2></div><div class="related-links"><a href="https://wa.me/34635335513?text=${whatsappText}">${labels.whatsapp}</a><a href="/contacto/">${labels.request}</a><a href="${projectPath}">${title}</a></div></section>`;
 
     document.documentElement.lang = language;
     if (language === "en") {

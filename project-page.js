@@ -27,8 +27,8 @@
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
   const labels = language === "en"
-    ? { home: "Home", catalog: "Projects", gallery: "Gallery", galleryTitle: "Property images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", contactTitle: "Tell us what you need and where the property is.", request: "Request information", whatsapp: "WhatsApp", similar: "If you want something similar, tell us", similarCopy: "We can help you assess whether it fits your property.", open: "Open image viewer", close: "Close viewer", previous: "Previous image", next: "Next image" }
-    : { home: "Inicio", catalog: "Proyectos gestionados", gallery: "Galería", galleryTitle: "Imágenes de la vivienda", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", contactTitle: "Cuéntanos qué necesitas y dónde está el inmueble.", request: "Solicitar información", whatsapp: "WhatsApp", similar: "Si quieres algo parecido, cuéntanoslo", similarCopy: "Te ayudamos a valorar si encaja con tu inmueble.", open: "Abrir imagen", close: "Cerrar visor", previous: "Imagen anterior", next: "Imagen siguiente" };
+    ? { home: "Home", gallery: "Gallery", galleryTitle: "Property images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", contactTitle: "Tell us what you need and where the property is.", request: "Request information", whatsapp: "WhatsApp", similar: "If you want something similar, tell us", similarCopy: "We can help you assess whether it fits your property.", open: "Open image viewer", close: "Close viewer", previous: "Previous image", next: "Next image" }
+    : { home: "Inicio", gallery: "Galería", galleryTitle: "Imágenes de la vivienda", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", contactTitle: "Cuéntanos qué necesitas y dónde está el inmueble.", request: "Solicitar información", whatsapp: "WhatsApp", similar: "Si quieres algo parecido, cuéntanoslo", similarCopy: "Te ayudamos a valorar si encaja con tu inmueble.", open: "Abrir imagen", close: "Cerrar visor", previous: "Imagen anterior", next: "Imagen siguiente" };
 
   function mountLightbox(project) {
     const images = project.images || [];
@@ -92,8 +92,8 @@
       closeButton.focus();
     };
 
-    page.querySelectorAll("[data-project-image-index]").forEach((trigger) => {
-      trigger.addEventListener("click", () => open(Number(trigger.dataset.projectImageIndex), trigger));
+    page.querySelectorAll("[data-project-lightbox-index]").forEach((trigger) => {
+      trigger.addEventListener("click", () => open(Number(trigger.dataset.projectLightboxIndex), trigger));
     });
     closeButton.addEventListener("click", close);
     previousButton.addEventListener("click", () => renderImage(activeIndex - 1));
@@ -119,16 +119,72 @@
     });
   }
 
+  function mountProjectViewer(project) {
+    const viewer = page.querySelector("[data-project-viewer]");
+    const images = project.images || [];
+    if (!viewer || !images.length) {
+      return;
+    }
+
+    const mainButton = viewer.querySelector("[data-project-viewer-main]");
+    const mainImage = viewer.querySelector("[data-project-viewer-image]");
+    const caption = viewer.querySelector("[data-project-viewer-caption]");
+    const counter = viewer.querySelector("[data-project-viewer-counter]");
+    const previousButton = viewer.querySelector("[data-project-viewer-prev]");
+    const nextButton = viewer.querySelector("[data-project-viewer-next]");
+    const thumbnails = Array.from(viewer.querySelectorAll("[data-project-viewer-index]"));
+    let activeIndex = 0;
+
+    const imageFile = (image) => `/assets/projects/${encodeURIComponent(project.slug)}/${encodeURIComponent(image.file)}`;
+    const renderImage = (index) => {
+      activeIndex = (index + images.length) % images.length;
+      const image = images[activeIndex];
+      const alt = t(image.alt) || t(image.caption) || t(project.title);
+      mainImage.src = imageFile(image);
+      mainImage.alt = alt;
+      mainButton.dataset.projectLightboxIndex = String(activeIndex);
+      mainButton.setAttribute("aria-label", `${labels.open}: ${t(image.caption) || alt}`);
+      caption.textContent = t(image.caption) || alt;
+      counter.textContent = `${activeIndex + 1} / ${images.length}`;
+      thumbnails.forEach((thumbnail, thumbnailIndex) => {
+        const selected = thumbnailIndex === activeIndex;
+        thumbnail.classList.toggle("is-active", selected);
+        thumbnail.setAttribute("aria-current", selected ? "true" : "false");
+      });
+    };
+
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener("click", () => renderImage(Number(thumbnail.dataset.projectViewerIndex)));
+    });
+    previousButton.addEventListener("click", () => renderImage(activeIndex - 1));
+    nextButton.addEventListener("click", () => renderImage(activeIndex + 1));
+    viewer.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        renderImage(activeIndex - 1);
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        renderImage(activeIndex + 1);
+      }
+    });
+    renderImage(0);
+  }
+
   function render(project) {
     const title = t(project.title);
     const summary = t(project.summary);
-    const projectPath = window.RMProjects.projectUrl(project.slug, language);
-    const imageHtml = (project.images || []).map((image, index) => {
+    const images = project.images || [];
+    const imageHtml = images.map((image, index) => {
       const file = `/assets/projects/${encodeURIComponent(project.slug)}/${encodeURIComponent(image.file)}`;
       const alt = t(image.alt) || t(image.caption) || title;
       const caption = t(image.caption) || alt;
-      return `<figure class="page-card project-image-card"><button class="project-image-trigger" type="button" data-project-image-index="${index}" aria-label="${escape(`${labels.open}: ${caption}`)}"><img src="${file}" alt="${escape(alt)}" loading="lazy" /></button><figcaption>${escape(caption)}</figcaption></figure>`;
+      return `<button class="project-viewer-thumbnail${index === 0 ? " is-active" : ""}" type="button" data-project-viewer-index="${index}" aria-label="${escape(caption)}" aria-current="${index === 0 ? "true" : "false"}"><img src="${file}" alt="" loading="lazy" /><span>${escape(caption)}</span></button>`;
     }).join("");
+    const firstImage = images[0];
+    const firstFile = firstImage ? `/assets/projects/${encodeURIComponent(project.slug)}/${encodeURIComponent(firstImage.file)}` : "";
+    const firstAlt = firstImage ? t(firstImage.alt) || t(firstImage.caption) || title : title;
+    const firstCaption = firstImage ? t(firstImage.caption) || firstAlt : "";
     const scopeHtml = (project.scope?.[language] || []).map((item) => `<li>${escape(item)}</li>`).join("");
     const rooms = project.metrics?.rooms;
     const bathrooms = project.metrics?.bathrooms;
@@ -138,17 +194,25 @@
       : "Quiero%20informaci%C3%B3n%20sobre%20este%20proyecto.";
 
     page.innerHTML = `
-      <nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="/">${labels.home}</a> / <a href="/proyectos/${language === "en" ? "?lang=en" : ""}">${labels.catalog}</a> / <span>${escape(title)}</span></nav>
-      <section class="page-hero">
+      <section class="project-viewer" data-project-viewer tabindex="0" aria-label="${escape(labels.galleryTitle)}">
+        <div class="project-viewer-stage">
+          <button class="project-viewer-image-trigger" type="button" data-project-viewer-main data-project-lightbox-index="0" aria-label="${escape(`${labels.open}: ${firstCaption}`)}"><img class="project-viewer-image" data-project-viewer-image src="${firstFile}" alt="${escape(firstAlt)}" /></button>
+          <button class="project-viewer-nav project-viewer-prev" type="button" data-project-viewer-prev aria-label="${labels.previous}">‹</button>
+          <button class="project-viewer-nav project-viewer-next" type="button" data-project-viewer-next aria-label="${labels.next}">›</button>
+          <span class="project-viewer-counter" data-project-viewer-counter aria-live="polite">1 / ${images.length}</span>
+        </div>
+        <p class="project-viewer-caption" data-project-viewer-caption>${escape(firstCaption)}</p>
+        <div class="project-viewer-thumbnails" aria-label="${escape(labels.galleryTitle)}">${imageHtml}</div>
+      </section>
+      <section class="page-hero project-intro">
         <div><p class="page-kicker">${escape(t(project.section))}</p><h1>${escape(title)}</h1><p class="page-lead">${escape(summary)}</p>
           <div class="page-hero-actions"><a class="whatsapp-button" href="https://wa.me/34635335513?text=${whatsappText}" target="_blank" rel="noopener"><img class="whatsapp-icon" src="/assets/whatsapp.svg" alt="" aria-hidden="true" />${labels.whatsapp}</a><a class="button button-light" href="/contacto/">${labels.request}</a></div>
         </div>
         <aside class="page-hero-panel" aria-label="${escape(labels.rooms)}"><article class="page-card"><h3>${labels.rooms}</h3><p>${escape(formatCount(rooms, language === "en" ? "room" : "habitación", language === "en" ? "rooms" : "habitaciones"))}</p></article><article class="page-card"><h3>${labels.bathrooms}</h3><p>${escape(formatCount(bathrooms, language === "en" ? "bathroom" : "baño", language === "en" ? "bathrooms" : "baños"))}</p></article><article class="page-card"><h3>${labels.renovation}</h3><p>${escape(formatRenovation(renovation))}</p></article></aside>
       </section>
-      <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.gallery}</p><h2>${labels.galleryTitle}</h2></div><div class="project-grid">${imageHtml}</div></section>
       <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.scope}</p><h2>${labels.scopeTitle}</h2></div><ul class="page-list">${scopeHtml}</ul></section>
       <section class="page-cta"><p class="page-kicker">${labels.contact}</p><strong>${labels.similar}</strong><p>${labels.similarCopy}</p><a class="button button-light" href="/contacto/">${labels.request}</a></section>
-      <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.contact}</p><h2>${labels.contactTitle}</h2></div><div class="related-links"><a href="https://wa.me/34635335513?text=${whatsappText}">${labels.whatsapp}</a><a href="/contacto/">${labels.request}</a><a href="${projectPath}">${title}</a></div></section>`;
+      <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.contact}</p><h2>${labels.contactTitle}</h2></div><div class="related-links"><a href="https://wa.me/34635335513?text=${whatsappText}">${labels.whatsapp}</a><a href="/contacto/">${labels.request}</a></div></section>`;
 
     document.documentElement.lang = language;
     if (language === "en") {
@@ -168,6 +232,7 @@
       link.href = window.RMProjects.projectUrl(project.slug, targetLanguage);
       link.setAttribute("aria-current", targetLanguage === language ? "page" : "false");
     });
+    mountProjectViewer(project);
     mountLightbox(project);
   }
 

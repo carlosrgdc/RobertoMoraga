@@ -3774,8 +3774,20 @@ input[type="range"] {
     linear-gradient(90deg, rgba(20, 31, 28, 0.92) 0%, rgba(20, 31, 28, 0.56) 42%, rgba(20, 31, 28, 0.24) 64%, rgba(20, 31, 28, 0.08) 86%, rgba(20, 31, 28, 0.06) 100%),
     linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
     url("./assets/hero-background.jpg");
-  background-size: 100% 100%, cover, cover;
-  background-position: left top, 42% center, 42% center;
+  background-size: 100% 100%, 100% 100%, 112% auto;
+  background-position: left top, center center, 45% center;
+}
+
+.hero-photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, rgba(20, 31, 28, 0) 24%, rgba(20, 31, 28, 0.025) 42%, rgba(20, 31, 28, 0.12) 100%);
+  -webkit-backdrop-filter: blur(3px) saturate(0.86);
+  backdrop-filter: blur(3px) saturate(0.86);
+  -webkit-mask-image: linear-gradient(90deg, transparent 22%, rgba(0, 0, 0, 0.12) 38%, #000 58%);
+  mask-image: linear-gradient(90deg, transparent 22%, rgba(0, 0, 0, 0.12) 38%, #000 58%);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -3970,7 +3982,7 @@ input[type="range"] {
       linear-gradient(90deg, rgba(20, 31, 28, 0.92) 0%, rgba(20, 31, 28, 0.66) 18%, rgba(20, 31, 28, 0.42) 34%, rgba(20, 31, 28, 0.18) 50%, rgba(20, 31, 28, 0.1) 72%, rgba(20, 31, 28, 0.08) 100%),
       linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
       url("./assets/hero-background.jpg");
-    background-size: 100% 100%, cover, cover;
-    background-position: left top, 38% center, 38% center;
+    background-size: 100% 100%, 100% 100%, auto 116%;
+    background-position: left top, center center, 46% center;
   }
 }

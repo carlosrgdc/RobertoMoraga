@@ -6,11 +6,11 @@
     "en": "Managed projects"
   },
   "title": {
-    "es": "Leganes",
+    "es": "Leganés",
     "en": "Leganes"
   },
   "city": {
-    "es": "Leganes",
+    "es": "Leganés",
     "en": "Leganes"
   },
   "summary": {
@@ -40,122 +40,122 @@
     {
       "file": "cover.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Habitación 1 de la vivienda en Leganés",
+        "en": "Bedroom 1 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Habitación 1",
+        "en": "Bedroom 1"
       }
     },
     {
       "file": "interior-1.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Cocina de la vivienda en Leganés",
+        "en": "Kitchen in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Cocina",
+        "en": "Kitchen"
       }
     },
     {
       "file": "interior-2.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Baño 1 de la vivienda en Leganés",
+        "en": "Bathroom 1 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Baño 1",
+        "en": "Bathroom 1"
       }
     },
     {
       "file": "interior-3.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Baño 1 de la vivienda en Leganés",
+        "en": "Bathroom 1 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Baño 1",
+        "en": "Bathroom 1"
       }
     },
     {
       "file": "interior-4.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Baño 1 de la vivienda en Leganés",
+        "en": "Bathroom 1 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Baño 1",
+        "en": "Bathroom 1"
       }
     },
     {
       "file": "interior-5.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Terraza de la vivienda en Leganés",
+        "en": "Terrace of the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Terraza",
+        "en": "Terrace"
       }
     },
     {
       "file": "interior-6.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Habitación 2 de la vivienda en Leganés",
+        "en": "Bedroom 2 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Habitación 2",
+        "en": "Bedroom 2"
       }
     },
     {
       "file": "interior-7.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Terraza de la vivienda en Leganés",
+        "en": "Terrace of the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Terraza",
+        "en": "Terrace"
       }
     },
     {
       "file": "interior-8.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Habitación 3 de la vivienda en Leganés",
+        "en": "Bedroom 3 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Habitación 3",
+        "en": "Bedroom 3"
       }
     },
     {
       "file": "interior-9.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Habitación 4 de la vivienda en Leganés",
+        "en": "Bedroom 4 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Habitación 4",
+        "en": "Bedroom 4"
       }
     },
     {
       "file": "interior-10.jpeg",
       "alt": {
-        "es": "Imagen de la vivienda en Leganes",
-        "en": "Image of the property in Leganes"
+        "es": "Habitación 5 de la vivienda en Leganés",
+        "en": "Bedroom 5 in the Leganés property"
       },
       "caption": {
-        "es": "Espacio de la vivienda en Leganes.",
-        "en": "Property space in Leganes."
+        "es": "Habitación 5",
+        "en": "Bedroom 5"
       }
     }
   ],

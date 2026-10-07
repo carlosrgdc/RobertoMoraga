@@ -27,16 +27,107 @@
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
   const labels = language === "en"
-    ? { home: "Home", catalog: "Projects", gallery: "Gallery", galleryTitle: "Project images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", contactTitle: "Tell us what you need and where the property is.", request: "Request information", whatsapp: "WhatsApp", similar: "If you want something similar, tell us", similarCopy: "We can help you assess whether it fits your property." }
-    : { home: "Inicio", catalog: "Vendemos", gallery: "Galería", galleryTitle: "Imágenes del proyecto", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", contactTitle: "Cuéntanos qué necesitas y dónde está el inmueble.", request: "Solicitar información", whatsapp: "WhatsApp", similar: "Si quieres algo parecido, cuéntanoslo", similarCopy: "Te ayudamos a valorar si encaja con tu inmueble." };
+    ? { home: "Home", catalog: "Projects", gallery: "Gallery", galleryTitle: "Property images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", contactTitle: "Tell us what you need and where the property is.", request: "Request information", whatsapp: "WhatsApp", similar: "If you want something similar, tell us", similarCopy: "We can help you assess whether it fits your property.", open: "Open image viewer", close: "Close viewer", previous: "Previous image", next: "Next image" }
+    : { home: "Inicio", catalog: "Proyectos gestionados", gallery: "Galería", galleryTitle: "Imágenes de la vivienda", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", contactTitle: "Cuéntanos qué necesitas y dónde está el inmueble.", request: "Solicitar información", whatsapp: "WhatsApp", similar: "Si quieres algo parecido, cuéntanoslo", similarCopy: "Te ayudamos a valorar si encaja con tu inmueble.", open: "Abrir imagen", close: "Cerrar visor", previous: "Imagen anterior", next: "Imagen siguiente" };
+
+  function mountLightbox(project) {
+    const images = project.images || [];
+    if (!images.length) {
+      return;
+    }
+
+    document.querySelector("[data-project-lightbox]")?.remove();
+    const viewer = document.createElement("dialog");
+    viewer.className = "project-lightbox";
+    viewer.dataset.projectLightbox = "true";
+    viewer.setAttribute("aria-label", labels.galleryTitle);
+    viewer.innerHTML = `
+      <div class="project-lightbox-shell">
+        <button class="project-lightbox-close" type="button" data-project-lightbox-close aria-label="${labels.close}">${labels.close}</button>
+        <button class="project-lightbox-nav project-lightbox-prev" type="button" data-project-lightbox-prev aria-label="${labels.previous}">‹</button>
+        <figure class="project-lightbox-figure">
+          <img class="project-lightbox-image" data-project-lightbox-image alt="" />
+          <figcaption class="project-lightbox-caption" data-project-lightbox-caption></figcaption>
+        </figure>
+        <button class="project-lightbox-nav project-lightbox-next" type="button" data-project-lightbox-next aria-label="${labels.next}">›</button>
+        <span class="project-lightbox-counter" data-project-lightbox-counter aria-live="polite"></span>
+      </div>`;
+    document.body.appendChild(viewer);
+
+    const imageNode = viewer.querySelector("[data-project-lightbox-image]");
+    const captionNode = viewer.querySelector("[data-project-lightbox-caption]");
+    const counterNode = viewer.querySelector("[data-project-lightbox-counter]");
+    const closeButton = viewer.querySelector("[data-project-lightbox-close]");
+    const previousButton = viewer.querySelector("[data-project-lightbox-prev]");
+    const nextButton = viewer.querySelector("[data-project-lightbox-next]");
+    let activeIndex = 0;
+    let lastTrigger = null;
+
+    const imageFile = (image) => `/assets/projects/${encodeURIComponent(project.slug)}/${encodeURIComponent(image.file)}`;
+    const renderImage = (index) => {
+      activeIndex = (index + images.length) % images.length;
+      const image = images[activeIndex];
+      const alt = t(image.alt) || t(image.caption) || t(project.title);
+      imageNode.src = imageFile(image);
+      imageNode.alt = alt;
+      captionNode.textContent = t(image.caption) || alt;
+      counterNode.textContent = `${activeIndex + 1} / ${images.length}`;
+    };
+    const close = () => {
+      if (viewer.open) {
+        viewer.close();
+      }
+      document.body.classList.remove("project-lightbox-open");
+      lastTrigger?.focus();
+    };
+    const open = (index, trigger) => {
+      lastTrigger = trigger;
+      renderImage(index);
+      document.body.classList.add("project-lightbox-open");
+      if (typeof viewer.showModal === "function") {
+        viewer.showModal();
+      } else {
+        viewer.setAttribute("open", "");
+      }
+      closeButton.focus();
+    };
+
+    page.querySelectorAll("[data-project-image-index]").forEach((trigger) => {
+      trigger.addEventListener("click", () => open(Number(trigger.dataset.projectImageIndex), trigger));
+    });
+    closeButton.addEventListener("click", close);
+    previousButton.addEventListener("click", () => renderImage(activeIndex - 1));
+    nextButton.addEventListener("click", () => renderImage(activeIndex + 1));
+    viewer.addEventListener("click", (event) => {
+      if (event.target === viewer) {
+        close();
+      }
+    });
+    viewer.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      close();
+    });
+    viewer.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        renderImage(activeIndex - 1);
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        renderImage(activeIndex + 1);
+      }
+    });
+  }
 
   function render(project) {
     const title = t(project.title);
     const summary = t(project.summary);
     const projectPath = window.RMProjects.projectUrl(project.slug, language);
-    const imageHtml = (project.images || []).map((image) => {
+    const imageHtml = (project.images || []).map((image, index) => {
       const file = `/assets/projects/${encodeURIComponent(project.slug)}/${encodeURIComponent(image.file)}`;
-      return `<figure class="page-card"><img src="${file}" alt="${escape(t(image.alt) || title)}" loading="lazy" /><figcaption>${escape(t(image.caption))}</figcaption></figure>`;
+      const alt = t(image.alt) || t(image.caption) || title;
+      const caption = t(image.caption) || alt;
+      return `<figure class="page-card project-image-card"><button class="project-image-trigger" type="button" data-project-image-index="${index}" aria-label="${escape(`${labels.open}: ${caption}`)}"><img src="${file}" alt="${escape(alt)}" loading="lazy" /></button><figcaption>${escape(caption)}</figcaption></figure>`;
     }).join("");
     const scopeHtml = (project.scope?.[language] || []).map((item) => `<li>${escape(item)}</li>`).join("");
     const rooms = project.metrics?.rooms;
@@ -77,6 +168,7 @@
       link.href = window.RMProjects.projectUrl(project.slug, targetLanguage);
       link.setAttribute("aria-current", targetLanguage === language ? "page" : "false");
     });
+    mountLightbox(project);
   }
 
   window.RMProjects.fetchProject(slug).then(render).catch((error) => {

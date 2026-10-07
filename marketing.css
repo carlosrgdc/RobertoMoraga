@@ -384,6 +384,19 @@ body.marketing-page .site-header {
   display: grid;
   gap: 12px;
   align-content: start;
+  padding: 0 0 16px;
+}
+
+.marketing-page .project-image-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  cursor: zoom-in;
+  overflow: hidden;
 }
 
 .marketing-page .project-grid .page-card img {
@@ -392,11 +405,139 @@ body.marketing-page .site-header {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.marketing-page .project-image-trigger:hover img {
+  transform: scale(1.025);
+  filter: brightness(0.96);
+}
+
+.marketing-page .project-image-trigger:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .marketing-page .project-grid .page-card figcaption {
+  padding: 0 16px;
   color: var(--muted);
   line-height: 1.55;
+}
+
+body.project-lightbox-open {
+  overflow: hidden;
+}
+
+.project-lightbox {
+  width: min(94vw, 1180px);
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.project-lightbox::backdrop {
+  background: rgba(14, 25, 21, 0.84);
+  backdrop-filter: blur(5px);
+}
+
+.project-lightbox-shell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: min(82vh, 860px);
+  padding: clamp(52px, 6vw, 76px) clamp(52px, 7vw, 92px) clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background: #18251f;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+}
+
+.project-lightbox-figure {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.project-lightbox-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(72vh, 760px);
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f6f1e8;
+}
+
+.project-lightbox-caption {
+  margin-top: 14px;
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.project-lightbox-close,
+.project-lightbox-nav {
+  position: absolute;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.project-lightbox-close:hover,
+.project-lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.project-lightbox-close:focus-visible,
+.project-lightbox-nav:focus-visible {
+  outline: 3px solid #f3bf70;
+  outline-offset: 3px;
+}
+
+.project-lightbox-close {
+  top: 16px;
+  right: 16px;
+  min-width: 44px;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.project-lightbox-nav {
+  top: 50%;
+  width: 46px;
+  height: 58px;
+  margin-top: -29px;
+  border-radius: 999px;
+  font-size: 2.3rem;
+  line-height: 1;
+}
+
+.project-lightbox-prev {
+  left: 14px;
+}
+
+.project-lightbox-next {
+  right: 14px;
+}
+
+.project-lightbox-counter {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 750;
+  transform: translateX(-50%);
 }
 
 .marketing-page .project-card .project-meta {

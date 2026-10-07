@@ -147,9 +147,9 @@
         const hero = document.querySelector(".page-hero");
         const breadcrumb = document.querySelector(".breadcrumbs a:last-of-type");
         if (hero) {
-          hero.querySelector(".page-kicker")?.replaceChildren("Projects");
-          hero.querySelector("h1")?.replaceChildren("Comparable cases");
-          hero.querySelector(".page-lead")?.replaceChildren("Indicative figures.");
+          hero.querySelector(".page-kicker")?.replaceChildren("Managed projects");
+          hero.querySelector("h1")?.replaceChildren("Homes prepared for rental");
+          hero.querySelector(".page-lead")?.replaceChildren("See homes we prepare and manage for room rentals.");
         }
         breadcrumb?.replaceChildren("Projects");
         document.querySelectorAll(".language-toggle a").forEach((link) => {

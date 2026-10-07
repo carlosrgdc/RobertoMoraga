@@ -5,7 +5,7 @@
   }
 
   const status = form.querySelector("[data-owner-form-status]");
-  const whatsappNumber = "34635335513";
+  const whatsappNumber = "34684409811";
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();

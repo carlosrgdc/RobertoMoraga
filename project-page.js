@@ -206,7 +206,7 @@
       </section>
       <section class="page-hero project-intro">
         <div><p class="page-kicker">${escape(t(project.section))}</p><h1>${escape(title)}</h1><p class="page-lead">${escape(summary)}</p>
-          <div class="page-hero-actions"><a class="whatsapp-button" href="https://wa.me/34635335513?text=${whatsappText}" target="_blank" rel="noopener"><img class="whatsapp-icon" src="/assets/whatsapp.svg" alt="" aria-hidden="true" />${labels.whatsapp}</a><a class="button button-light" href="/contacto/">${labels.request}</a></div>
+          <div class="page-hero-actions"><a class="whatsapp-button" href="https://wa.me/34684409811?text=${whatsappText}" target="_blank" rel="noopener"><img class="whatsapp-icon" src="/assets/whatsapp.svg" alt="" aria-hidden="true" />${labels.whatsapp}</a><a class="button button-light" href="/contacto/">${labels.request}</a></div>
         </div>
         <aside class="page-hero-panel" aria-label="${escape(labels.rooms)}"><article class="page-card"><h3>${labels.rooms}</h3><p>${escape(formatCount(rooms, language === "en" ? "room" : "habitación", language === "en" ? "rooms" : "habitaciones"))}</p></article><article class="page-card"><h3>${labels.bathrooms}</h3><p>${escape(formatCount(bathrooms, language === "en" ? "bathroom" : "baño", language === "en" ? "bathrooms" : "baños"))}</p></article><article class="page-card"><h3>${labels.renovation}</h3><p>${escape(formatRenovation(renovation))}</p></article></aside>
       </section>

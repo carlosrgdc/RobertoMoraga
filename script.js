@@ -551,7 +551,10 @@
       stats.appendChild(small);
     });
 
-    meta.append(section, title, price, stats);
+    if (project.priceLabel) {
+      meta.append(price);
+    }
+    meta.append(section, title, stats);
     card.append(image, meta);
     return card;
   }

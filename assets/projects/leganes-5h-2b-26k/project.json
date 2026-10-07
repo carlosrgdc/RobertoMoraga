@@ -1,0 +1,180 @@
+{
+  "slug": "leganes-5h-2b-26k",
+  "order": 4,
+  "section": {
+    "es": "Proyectos gestionados",
+    "en": "Managed projects"
+  },
+  "title": {
+    "es": "Leganes",
+    "en": "Leganes"
+  },
+  "city": {
+    "es": "Leganes",
+    "en": "Leganes"
+  },
+  "summary": {
+    "es": "Vivienda acondicionada para alquiler, con espacios funcionales y acabados preparados para el uso diario.",
+    "en": "Property prepared for rental, with functional spaces and finishes ready for everyday use."
+  },
+  "metrics": {
+    "rooms": 5,
+    "bathrooms": 2,
+    "renovation": 26000
+  },
+  "carousel": {
+    "model": {
+      "es": "Vivienda acondicionada",
+      "en": "Prepared property"
+    },
+    "reform": {
+      "es": "Acondicionamiento y puesta a punto de la vivienda.",
+      "en": "Property preparation and refurbishment."
+    },
+    "economics": {
+      "es": "Espacios funcionales y acabados preparados para el uso diario.",
+      "en": "Functional spaces and finishes ready for everyday use."
+    }
+  },
+  "images": [
+    {
+      "file": "cover.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-1.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-2.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-3.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-4.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-5.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-6.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-7.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-8.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-9.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    },
+    {
+      "file": "interior-10.jpeg",
+      "alt": {
+        "es": "Imagen de la vivienda en Leganes",
+        "en": "Image of the property in Leganes"
+      },
+      "caption": {
+        "es": "Espacio de la vivienda en Leganes.",
+        "en": "Property space in Leganes."
+      }
+    }
+  ],
+  "scope": {
+    "es": [
+      "Espacios acondicionados para alquiler.",
+      "Cocina y baños revisados para el uso diario.",
+      "Mobiliario funcional y acabados resistentes.",
+      "Preparación comercial de la vivienda."
+    ],
+    "en": [
+      "Spaces prepared for rental.",
+      "Kitchen and bathrooms reviewed for everyday use.",
+      "Functional furniture and durable finishes.",
+      "Commercial preparation of the property."
+    ]
+  },
+  "cta": {
+    "es": "Preparamos viviendas funcionales, claras y listas para su siguiente etapa.",
+    "en": "We prepare functional, clear homes ready for their next stage."
+  }
+}

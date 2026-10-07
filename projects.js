@@ -15,6 +15,23 @@
     return value ?? "";
   };
 
+  const formatCount = (value, language, singular, plural) => {
+    if (value === null || value === undefined || value === "") {
+      return "";
+    }
+    return `${value} ${value === 1 ? singular[language] : plural[language]}`;
+  };
+
+  const formatRenovation = (value, language) => {
+    if (value === null || value === undefined || value === "") {
+      return language === "en" ? "Renovation not provided" : "Reforma no indicada";
+    }
+    const amount = new Intl.NumberFormat(language === "en" ? "en-US" : "es-ES", {
+      maximumFractionDigits: 0,
+    }).format(value);
+    return language === "en" ? `€${amount} renovation` : `${amount} € reforma`;
+  };
+
   const projectUrl = (slug, language) => {
     const suffix = language === "en" ? "?lang=en" : "";
     return `/proyectos/${encodeURIComponent(slug)}/${suffix}`;
@@ -67,7 +84,7 @@
         title: text(project.title, language),
         city: text(project.city, language),
         summary: text(project.summary, language),
-        priceLabel: text(project.metrics?.cost, language),
+        metrics: project.metrics || {},
         coverUrl: `/assets/projects/${encodeURIComponent(project.slug)}/${encodeURIComponent(project.images?.[0]?.file || "")}`,
         coverAlt: text(project.images?.[0]?.alt, language),
         projectUrl: projectUrl(project.slug, language),
@@ -75,9 +92,11 @@
           model: text(project.carousel?.model, language),
           reform: text(project.carousel?.reform, language),
           economics: text(project.carousel?.economics, language),
-          stats: Array.isArray(project.carousel?.stats?.[language])
-            ? project.carousel.stats[language]
-            : [],
+          stats: [
+            formatCount(project.metrics?.rooms, language, { es: "habitación", en: "room" }, { es: "habitaciones", en: "rooms" }),
+            formatCount(project.metrics?.bathrooms, language, { es: "baño", en: "bathroom" }, { es: "baños", en: "bathrooms" }),
+            formatRenovation(project.metrics?.renovation, language),
+          ].filter(Boolean),
         },
       }));
   }
@@ -104,13 +123,11 @@
 
     const meta = document.createElement("div");
     meta.className = "project-meta";
-    [project.priceLabel, text(project.metrics?.return, language), text(project.metrics?.timeline, language)]
-      .filter(Boolean)
-      .forEach((value) => {
+    project.carousel.stats.forEach((value) => {
         const item = document.createElement("span");
         item.textContent = value;
         meta.appendChild(item);
-      });
+    });
 
     link.append(image, kicker, title, summary, meta);
     return link;

@@ -342,7 +342,7 @@ a {
       rgba(20, 31, 28, 0.24)
     ),
     linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
-    url("./assets/projects/madrid-chamberi/cover.jpg");
+    url("./assets/projects/fuenlabrada/cover.jpeg");
   background-size: cover;
   background-position: center calc(50% + var(--hero-shift, 0px));
   animation: roberto-moragaHeroPhoto 1300ms var(--motion-spring) both;
@@ -3553,7 +3553,7 @@ input[type="range"] {
 .hero-photo {
   background:
     linear-gradient(0deg, rgba(20, 31, 28, 0.06), rgba(20, 31, 28, 0.02)),
-    url("./assets/projects/madrid-chamberi/cover.jpg");
+    url("./assets/projects/fuenlabrada/cover.jpeg");
   background-position: center;
   animation: none;
 }
@@ -3768,7 +3768,7 @@ input[type="range"] {
   background:
     linear-gradient(90deg, rgba(20, 31, 28, 0.92), rgba(20, 31, 28, 0.56) 46%, rgba(20, 31, 28, 0.24)),
     linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
-    url("./assets/projects/madrid-chamberi/cover.jpg");
+    url("./assets/projects/fuenlabrada/cover.jpeg");
   background-size: cover;
   background-position: center;
 }

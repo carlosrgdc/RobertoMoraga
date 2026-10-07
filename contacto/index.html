@@ -3,26 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contacto Roberto Moraga | WhatsApp directo</title>
-    <meta name="description" content="Contacto directo de Roberto Moraga por WhatsApp." />
+    <title>Contacto Roberto Moraga | Datos de tu vivienda</title>
+    <meta name="description" content="Contacta con Roberto Moraga por WhatsApp y comparte tus datos, precio de alquiler y barrio." />
     <link rel="canonical" href="https://www.roberto-moraga.com/contacto/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Roberto Moraga" />
-    <meta property="og:title" content="Contacto Roberto Moraga | WhatsApp directo" />
-    <meta property="og:description" content="Contacto directo de Roberto Moraga por WhatsApp." />
+    <meta property="og:title" content="Contacto Roberto Moraga | Datos de tu vivienda" />
+    <meta property="og:description" content="Contacta con Roberto Moraga por WhatsApp y comparte tus datos, precio de alquiler y barrio." />
     <meta property="og:url" content="https://www.roberto-moraga.com/contacto/" />
     <meta property="og:image" content="https://www.roberto-moraga.com/assets/projects/fuenlabrada/cover.jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Contacto Roberto Moraga | WhatsApp directo" />
-    <meta name="twitter:description" content="Contacto directo de Roberto Moraga por WhatsApp." />
+    <meta name="twitter:title" content="Contacto Roberto Moraga | Datos de tu vivienda" />
+    <meta name="twitter:description" content="Contacta con Roberto Moraga por WhatsApp y comparte tus datos, precio de alquiler y barrio." />
     <meta name="twitter:image" content="https://www.roberto-moraga.com/assets/projects/fuenlabrada/cover.jpeg" />
     <meta name="theme-color" content="#244c3e" />
     
     <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="stylesheet" href="/styles.css?v=20260814a" />
-    <link rel="stylesheet" href="/marketing.css?v=20260814a" />
+    <link rel="stylesheet" href="/marketing.css?v=marketing-v7" />
     <script src="/analytics.js?v=20260814a" defer></script>
+    <script src="/contact-form.js?v=contact-form-v1" defer></script>
     
     
         <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Roberto Moraga","url":"https://www.roberto-moraga.com","logo":"https://www.roberto-moraga.com/assets/logo.svg"}</script>
@@ -52,8 +53,8 @@
       <section class="page-hero">
         <div>
           <p class="page-kicker">Contacto</p>
-          <h1>Escríbenos por WhatsApp</h1>
-          <p class="page-lead">Si quieres una respuesta rápida, escríbenos por WhatsApp y te atendemos directamente.</p>
+          <h1>Cuéntanos sobre tu vivienda</h1>
+          <p class="page-lead">Déjanos tus datos y la información básica del alquiler. Prepararemos el mensaje para que puedas enviarlo directamente por WhatsApp.</p>
           <div class="page-hero-actions">
             <a class="whatsapp-button" data-analytics-id="whatsapp_cta" href="https://wa.me/34635335513?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Roberto%20Moraga." target="_blank" rel="noopener"><img class="whatsapp-icon" src="/assets/whatsapp.svg" alt="" aria-hidden="true" />WhatsApp</a>
             <a class="button button-light" href="/proyectos/">Ver proyectos gestionados</a>
@@ -76,7 +77,35 @@
             </article></aside>
       </section>
 
-      
+      <section class="page-section">
+        <div class="section-heading">
+          <p class="eyebrow">Datos de contacto</p>
+          <h2>Déjanos tus datos y te respondemos</h2>
+          <p>Necesitamos estos datos para valorar rápidamente la vivienda y su encaje.</p>
+        </div>
+        <form class="page-form contact-owner-form" data-owner-contact-form>
+          <div class="contact-form-grid">
+            <label>Nombre
+              <input name="nombre" type="text" autocomplete="name" required placeholder="Tu nombre" />
+            </label>
+            <label>Teléfono
+              <input name="telefono" type="tel" autocomplete="tel" inputmode="tel" required placeholder="600 000 000" />
+            </label>
+            <label>Precio actual de alquiler (€ / mes)
+              <input name="precio_alquiler" type="number" min="0" step="50" inputmode="numeric" required placeholder="1200" />
+            </label>
+            <label>Barrio
+              <input name="barrio" type="text" autocomplete="address-level3" required placeholder="Ej. Chamberí" />
+            </label>
+          </div>
+          <label>Información adicional <span>(opcional)</span>
+            <textarea name="mensaje" rows="4" placeholder="Habitaciones, baños o cualquier detalle que quieras añadir."></textarea>
+          </label>
+          <button class="button button-light" type="submit">Enviar datos por WhatsApp</button>
+          <p class="form-status" data-owner-form-status hidden role="status"></p>
+        </form>
+      </section>
+
       <section class="page-section">
         
         <div class="section-heading">

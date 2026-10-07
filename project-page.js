@@ -27,8 +27,8 @@
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
   const labels = language === "en"
-    ? { home: "Home", gallery: "Gallery", galleryTitle: "Property images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", contactTitle: "Tell us what you need and where the property is.", request: "Request information", whatsapp: "WhatsApp", similar: "If you want something similar, tell us", similarCopy: "We can help you assess whether it fits your property.", open: "Open image viewer", close: "Close viewer", previous: "Previous image", next: "Next image" }
-    : { home: "Inicio", gallery: "Galería", galleryTitle: "Imágenes de la vivienda", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", contactTitle: "Cuéntanos qué necesitas y dónde está el inmueble.", request: "Solicitar información", whatsapp: "WhatsApp", similar: "Si quieres algo parecido, cuéntanoslo", similarCopy: "Te ayudamos a valorar si encaja con tu inmueble.", open: "Abrir imagen", close: "Cerrar visor", previous: "Imagen anterior", next: "Imagen siguiente" };
+    ? { galleryTitle: "Property images", scope: "Scope", scopeTitle: "What the work includes", rooms: "Rooms", bathrooms: "Bathrooms", renovation: "Renovation", contact: "Contact", request: "Request information", whatsapp: "WhatsApp", open: "Open image viewer", close: "Close viewer", previous: "Previous image", next: "Next image" }
+    : { galleryTitle: "Imágenes de la vivienda", scope: "Alcance", scopeTitle: "Qué incluye el trabajo", rooms: "Habitaciones", bathrooms: "Baños", renovation: "Reforma", contact: "Contacto", request: "Solicitar información", whatsapp: "WhatsApp", open: "Abrir imagen", close: "Cerrar visor", previous: "Imagen anterior", next: "Imagen siguiente" };
 
   function mountLightbox(project) {
     const images = project.images || [];
@@ -211,8 +211,7 @@
         <aside class="page-hero-panel" aria-label="${escape(labels.rooms)}"><article class="page-card"><h3>${labels.rooms}</h3><p>${escape(formatCount(rooms, language === "en" ? "room" : "habitación", language === "en" ? "rooms" : "habitaciones"))}</p></article><article class="page-card"><h3>${labels.bathrooms}</h3><p>${escape(formatCount(bathrooms, language === "en" ? "bathroom" : "baño", language === "en" ? "bathrooms" : "baños"))}</p></article><article class="page-card"><h3>${labels.renovation}</h3><p>${escape(formatRenovation(renovation))}</p></article></aside>
       </section>
       <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.scope}</p><h2>${labels.scopeTitle}</h2></div><ul class="page-list">${scopeHtml}</ul></section>
-      <section class="page-cta"><p class="page-kicker">${labels.contact}</p><strong>${labels.similar}</strong><p>${labels.similarCopy}</p><a class="button button-light" href="/contacto/">${labels.request}</a></section>
-      <section class="page-section"><div class="section-heading"><p class="eyebrow">${labels.contact}</p><h2>${labels.contactTitle}</h2></div><div class="related-links"><a href="https://wa.me/34635335513?text=${whatsappText}">${labels.whatsapp}</a><a href="/contacto/">${labels.request}</a></div></section>`;
+      `;
 
     document.documentElement.lang = language;
     if (language === "en") {

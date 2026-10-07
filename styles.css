@@ -339,7 +339,7 @@ a {
     linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
     url("./assets/hero-background.jpg");
   background-size: 100% 100%, cover, cover;
-  background-position: left top, right center, right center;
+  background-position: left top, 42% center, 42% center;
   animation: roberto-moragaHeroPhoto 1300ms var(--motion-spring) both;
 }
 
@@ -3771,11 +3771,11 @@ input[type="range"] {
 
 .hero-photo {
   background:
-    linear-gradient(90deg, rgba(20, 31, 28, 0.92) 0%, rgba(20, 31, 28, 0.56) 42%, rgba(20, 31, 28, 0.24) 64%, rgba(20, 31, 28, 0) 70%),
+    linear-gradient(90deg, rgba(20, 31, 28, 0.92) 0%, rgba(20, 31, 28, 0.56) 42%, rgba(20, 31, 28, 0.24) 64%, rgba(20, 31, 28, 0.08) 86%, rgba(20, 31, 28, 0.06) 100%),
     linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
     url("./assets/hero-background.jpg");
   background-size: 100% 100%, cover, cover;
-  background-position: left top, right center, right center;
+  background-position: left top, 42% center, 42% center;
 }
 
 .hero-content {
@@ -3967,10 +3967,10 @@ input[type="range"] {
 @media (max-width: 720px) {
   .hero-photo {
     background:
-      linear-gradient(90deg, rgba(20, 31, 28, 0.92) 0%, rgba(20, 31, 28, 0.58) 18%, rgba(20, 31, 28, 0.24) 29%, rgba(20, 31, 28, 0) 34%),
+      linear-gradient(90deg, rgba(20, 31, 28, 0.92) 0%, rgba(20, 31, 28, 0.66) 18%, rgba(20, 31, 28, 0.42) 34%, rgba(20, 31, 28, 0.18) 50%, rgba(20, 31, 28, 0.1) 72%, rgba(20, 31, 28, 0.08) 100%),
       linear-gradient(0deg, rgba(20, 31, 28, 0.76), rgba(20, 31, 28, 0.06) 50%),
       url("./assets/hero-background.jpg");
     background-size: 100% 100%, cover, cover;
-    background-position: left top, right center, right center;
+    background-position: left top, 38% center, 38% center;
   }
 }
